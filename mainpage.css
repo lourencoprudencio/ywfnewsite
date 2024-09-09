@@ -169,3 +169,50 @@ footer {
     background-color: #111; /* Dark gray background */
     text-align: center; /* Center text */
 }
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em; /* Smaller font size for mobile */
+    }
+
+    .hero-content p {
+        font-size: 1em; /* Smaller font size for mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        gap: 10px; /* Reduce space between items */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Smaller font size for mobile */
+    }
+
+    .logo {
+        width: 80px; /* Smaller logo for mobile */
+    }
+}
+
+/* Additional responsive design for very small devices */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5em; /* Further reduce font size */
+    }
+
+    .hero-content p {
+        font-size: 0.9em; /* Further reduce font size */
+    }
+
+    nav ul {
+        gap: 5px; /* Further reduce space between items */
+    }
+
+    nav ul li a {
+        font-size: 0.9em; /* Further reduce font size */
+    }
+
+    .logo {
+        width: 60px; /* Further reduce logo size */
+    }
+}
