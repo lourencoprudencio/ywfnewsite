@@ -2,323 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Secret - YWF♻️</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-
-        /* Style for the body element */
-        body {
-            margin: 0;
-            font-family: 'Black Ops One', sans-serif; /* Font for the entire page */
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-            background: #000; /* Black fallback background */
-        }
-
-        /* Style for the background video */
-        .background-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the video covers the entire area */
-            z-index: -1; /* Places the video behind the content */
-        }
-
-        /* Style for the logo */
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px; /* Adjust size for better responsiveness */
-            max-width: 100%;
-        }
-
-        /* Style for the login container */
-        .login-container {
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the login box */
-            padding: 20px; /* Adjust padding for better responsiveness */
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-            text-align: center;
-            max-width: 90%; /* Adjust width for better responsiveness */
-            width: 400px; /* Set a max width to avoid it becoming too large on bigger screens */
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Style for the 'TOP SECRET' watermark */
-        .login-container::before {
-            content: 'TOP SECRET';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: rgba(255, 0, 0, 0.6);
-            font-size: 1.5em;
-            font-weight: bold;
-            transform: rotate(45deg);
-            opacity: 0.8;
-            z-index: -1;
-        }
-
-        /* Style for the main heading inside the login container */
-        .login-container h1 {
-            margin: 0 0 20px;
-            font-size: 2em; /* Adjust font size for better responsiveness */
-        }
-
-        /* Style for the paragraph inside the login container */
-        .login-container p {
-            margin: 0 0 20px;
-            font-size: 1em; /* Adjust font size for better responsiveness */
-            color: #ddd;
-        }
-
-        /* Style for text inputs inside the login container */
-        .login-container input {
-            width: calc(100% - 20px); /* Adjust width to account for padding */
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-bottom: 2px solid #fff; /* White bottom border */
-            background-color: transparent; /* Transparent background */
-            color: #fff;
-            font-size: 1em; /* Adjust font size for better responsiveness */
-            letter-spacing: 1px;
-        }
-
-        /* Style for the submit button inside the login container */
-        .login-container input[type="submit"] {
-            background-color: transparent;
-            color: #fff;
-            cursor: pointer;
-            transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
-            border: 2px solid #fff;
-            border-radius: 5px;
-            padding: 15px;
-        }
-
-        /* Hover effect for the submit button */
-        .login-container input[type="submit"]:hover {
-            color: #000;
-            border: 2px solid #000;
-        }
-
-        /* Style for error messages */
-        .error-message {
-            color: #f00;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-
-        /* Style for the join whitelist button */
-        #joinWhitelistBtn {
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-            cursor: pointer;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: color 0.3s ease-in-out, border 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        /* Hover effect for the join whitelist button */
-        #joinWhitelistBtn:hover {
-            color: #000;
-            border: 2px solid #000;
-        }
-
-        /* Animation when the join whitelist button is active */
-        #joinWhitelistBtn.active {
-            animation: buttonExpand 0.3s ease-in-out;
-        }
-
-        /* Keyframes for the button expansion animation */
-        @keyframes buttonExpand {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
-
-        /* Style for the whitelist form */
-        .whitelist-form {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            margin-top: 20px;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the whitelist form */
-            padding: 0 20px;
-            border-radius: 10px;
-            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-        }
-
-        /* Style for showing the whitelist form */
-        .whitelist-form.show {
-            max-height: 500px; /* Adjust based on the content height */
-            opacity: 1;
-            padding: 20px;
-        }
-
-        /* Style for the heading inside the whitelist form */
-        .whitelist-form h2 {
-            margin-bottom: 20px;
-            font-size: 1.5em; /* Adjust font size for better responsiveness */
-        }
-
-        /* Style for text inputs inside the whitelist form */
-        .whitelist-form input {
-            margin: 10px 0;
-            padding: 10px;
-            border: none;
-            border-bottom: 2px solid #fff; /* White bottom border */
-            background-color: transparent; /* Transparent background */
-            color: #fff;
-        }
-
-        /* Style for the submit button inside the whitelist form */
-        .whitelist-form input[type="submit"] {
-            background-color: transparent;
-            color: #ff5722;
-            border: 2px solid #ff5722;
-            cursor: pointer;
-            transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
-            padding: 15px;
-        }
-
-        /* Hover effect for the submit button in the whitelist form */
-        .whitelist-form input[type="submit"]:hover {
-            color: #ff5722;
-            border: 2px solid #000;
-            background-color: transparent;
-        }
-
-        /* Style for privacy note text */
-        .privacy-note {
-            font-size: 0.8em;
-            color: #aaa;
-            margin-top: 10px;
-        }
-
-        /* Keyframes for the flicker animation */
-        @keyframes flicker {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        /* Flicker animation for input fields and submit button */
-        .login-container input, .login-container input[type="submit"] {
-            animation: flicker 2s infinite;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 600px) {
-            .login-container {
-                padding: 15px;
-                width: 90%;
-                max-width: none;
-            }
-
-            .login-container h1 {
-                font-size: 1.8em;
-            }
-
-            .login-container p {
-                font-size: 0.9em;
-            }
-
-            .login-container input, .login-container input[type="submit"] {
-                font-size: 0.9em;
-                padding: 8px;
-            }
-
-            .whitelist-form h2 {
-                font-size: 1.2em;
-            }
-
-            .whitelist-form input, .whitelist-form input[type="submit"] {
-                font-size: 0.9em;
-                padding: 8px;
-            }
-
-            .logo {
-                width: 60px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .login-container h1 {
-                font-size: 1.5em;
-            }
-
-            .login-container p {
-                font-size: 0.8em;
-            }
-
-            .login-container input, .login-container input[type="submit"] {
-                font-size: 0.8em;
-                padding: 6px;
-            }
-
-            .whitelist-form h2 {
-                font-size: 1em;
-            }
-
-            .whitelist-form input, .whitelist-form input[type="submit"] {
-                font-size: 0.8em;
-                padding: 6px;
-            }
-
-            .logo {
-                width: 50px;
-            }
-        }
-    </style>
+    <meta charset="UTF-8"> <!-- Character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design settings -->
+    <title>Top Secret - YWF♻️</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="index.css"> <!-- Link to the external stylesheet -->
+    <link rel="icon" href="ywf.png" type="image/png"> <!-- Favicon for the webpage -->
 </head>
 
 <body>
     <!-- Background video element -->
     <video autoplay muted loop class="background-video">
-        <source src="backgroundvideo.mp4" type="video/mp4">
+        <source src="backgroundvideo.mp4" type="video/mp4"> <!-- Source of the background video -->
         <!-- Message for browsers that do not support the video tag -->
         Your browser does not support the video tag.
     </video>
 
     <!-- Logo image -->
-    <img src="YWF.png" alt="YWF♻️ Logo" class="logo"> <!-- Brand logo -->
-    <div class="login-container">
-        <h1>YWF♻️ Access</h1> <!-- Main heading -->
-        <p>To unlock exclusive drops, please enter your username and password. This area is top secret.</p> <!-- Instruction text -->
-        <!-- Login form -->
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Enter username" required>
-            <input type="password" id="password" placeholder="Enter password" required>
-            <input type="submit" value="Enter">
-            <div id="error" class="error-message"></div> <!-- Error message display -->
-        </form>
-        <!-- Button to join the whitelist -->
-        <button id="joinWhitelistBtn">Join Whitelist</button>
-        <!-- Whitelist form (hidden by default) -->
-        <div class="whitelist-form" id="whitelistFormContainer">
-            <h2>Join Whitelist</h2>
-            <!-- Whitelist form -->
-            <form id="whitelistForm">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="text" id="firstName" placeholder="First Name" required>
-                <input type="text" id="lastName" placeholder="Last Name" required>
-                <input type="tel" id="phone" placeholder="Phone Number" required>
-                <input type="submit" value="Join">
+    <img src="YWF.png" alt="YWF♻️ Logo" class="logo"> <!-- Logo of the website -->
+
+    <div class="container">
+        <div class="login-container">
+            <h1>YWF♻️ Access</h1> <!-- Main heading for the login section -->
+            <p>To unlock exclusive drops, please enter your username and password. This area is top secret.</p> <!-- Description text -->
+            <form id="loginForm"> <!-- Login form -->
+                <input type="text" id="username" placeholder="Enter username" required> <!-- Username input field -->
+                <input type="password" id="password" placeholder="Enter password" required> <!-- Password input field -->
+                <input type="submit" value="Enter"> <!-- Submit button -->
+                <div id="error" class="error-message"></div> <!-- Container for displaying error messages -->
             </form>
-            <p class="privacy-note">Your information will not be shared with third parties.</p> <!-- Privacy note -->
+            <button id="joinWhitelistBtn">Join Whitelist</button> <!-- Button to join the whitelist -->
+        </div>
+        <div class="whitelist-form" id="whitelistFormContainer">
+            <h2>Join Whitelist</h2> <!-- Heading for the whitelist form -->
+            <div class="form-fields">
+                <input type="email" id="email" placeholder="Email" required> <!-- Email input field -->
+                <input type="text" id="firstName" placeholder="First Name" required> <!-- First name input field -->
+                <input type="text" id="lastName" placeholder="Last Name" required> <!-- Last name input field -->
+                <input type="text" id="phone" placeholder="Phone Number"> <!-- Phone number input field -->
+            </div>
+            <input type="submit" value="Submit"> <!-- Submit button for the whitelist form -->
+            <div class="privacy-note">
+                By joining, you agree to our <a href="#">Privacy Policy</a>. <!-- Privacy policy link -->
+            </div>
         </div>
     </div>
 
@@ -331,41 +56,25 @@
         ];
 
         // Event listener for the login form submission
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents the default form submission
-
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Checks if the username and password combination is valid
+            // Check if the username and password combination is valid
             const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
 
             if (isValid) {
-                window.location.href = 'mainpage.html'; // Redirects to the main page
+                window.location.href = 'mainpage.html'; // Redirect to mainpage.html if valid
             } else {
-                document.getElementById('error').textContent = 'Incorrect username or password. Please try again.';
+                document.getElementById('error').textContent = 'Incorrect username or password. Please try again.'; // Display error message if invalid
             }
         });
 
-        // Event listener for the join whitelist button click
+        // Event listener for the whitelist button click
         document.getElementById('joinWhitelistBtn').addEventListener('click', function() {
-            const whitelistForm = document.getElementById('whitelistFormContainer');
-            if (whitelistForm.classList.contains('show')) {
-                whitelistForm.classList.remove('show');
-                this.textContent = 'Join Whitelist';
-            } else {
-                whitelistForm.classList.add('show');
-                this.textContent = 'Close Whitelist';
-                this.classList.add('active');
-            }
-        });
-
-        // Event listener for the whitelist form submission
-        document.getElementById('whitelistForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents the default form submission
-
-            // Here you can add code to process whitelist data
-            alert('You have been added to the whitelist.');
+            document.getElementById('whitelistFormContainer').classList.toggle('show'); // Toggle visibility of the whitelist form
+            this.classList.toggle('active'); // Toggle the 'active' class on the button
         });
     </script>
 </body>

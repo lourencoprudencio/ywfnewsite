@@ -1,0 +1,185 @@
+/* Styling for the body element */
+body {
+    margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Apply Arial font */
+    background-color: #000; /* Set background color to black */
+    color: #fff; /* Set text color to white */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Styling for the header element */
+header {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center items horizontally */
+    padding: 20px; /* Padding inside the header */
+    background-color: #000; /* Black background color */
+    position: fixed; /* Fix the header at the top */
+    width: 100%; /* Full width */
+    top: 0; /* Align at the top of the page */
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+}
+
+/* Minimized state of the header */
+header.minimized {
+    padding: 10px; /* Reduce padding */
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
+    transform: scale(0.9); /* Reduce size of the header */
+}
+
+/* Styling for the logo */
+.logo {
+    width: 100px; /* Set width */
+    height: 100px; /* Set height */
+    background-image: url('YWF.png'); /* Set logo image */
+    background-size: contain; /* Scale the image to fit container */
+    background-repeat: no-repeat; /* Prevent image repeat */
+    background-position: center; /* Center the image */
+    margin-bottom: 20px; /* Margin below the logo */
+    transition: width 0.3s ease-in-out; /* Smooth transition for width */
+}
+
+/* Adjust logo size when header is minimized */
+header.minimized .logo {
+    width: 80px; /* Reduce logo size */
+}
+
+/* Styling for navigation menu */
+nav ul {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Space between items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    transition: flex-direction 0.3s ease-in-out, gap 0.3s ease-in-out; /* Smooth transition for flex-direction and gap */
+}
+
+/* Adjust navigation menu layout when header is minimized */
+header.minimized nav ul {
+    flex-direction: row; /* Arrange items in a row */
+    gap: 10px; /* Reduce space between items */
+}
+
+/* Styling for list items in the navigation menu */
+nav ul li {
+    position: relative; /* Position relative for child elements */
+}
+
+/* Styling for links in the navigation menu */
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #bbb; /* Light gray text color */
+    font-size: 1.2em; /* Font size */
+    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out; /* Smooth transition for color and font-size */
+}
+
+/* Adjust font size of links when header is minimized */
+header.minimized nav ul li a {
+    font-size: 1em; /* Reduce font size */
+}
+
+/* Underline effect for links */
+nav ul li a::after {
+    content: ''; /* Empty content for pseudo-element */
+    display: block; /* Display as block */
+    width: 0; /* Start with 0 width */
+    height: 2px; /* Set height */
+    background: #fff; /* White background */
+    transition: width 0.3s ease-in-out; /* Smooth transition for width */
+    margin-top: 5px; /* Margin on top */
+}
+
+/* Expand underline effect on hover */
+nav ul li a:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+/* Change text color on hover */
+nav ul li a:hover {
+    color: #fff; /* White text color on hover */
+}
+
+/* Styling for the hero section */
+.hero-section {
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    background: url('your-image.jpg') no-repeat center center/cover; /* Background image with cover */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative for overlay */
+    margin-top: 120px; /* Margin to account for fixed header */
+}
+
+/* Overlay effect for hero section */
+.hero-section::before {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 1; /* Ensure overlay is above background */
+}
+
+/* Styling for hero content */
+.hero-content {
+    position: relative; /* Position relative for z-index */
+    z-index: 2; /* Ensure content is above overlay */
+    max-width: 800px; /* Maximum width */
+    padding: 20px; /* Padding inside */
+}
+
+/* Styling for hero section heading */
+.hero-content h1 {
+    font-size: 3em; /* Font size */
+    margin: 0; /* Remove margin */
+    letter-spacing: 5px; /* Space between letters */
+}
+
+/* Styling for hero section paragraph */
+.hero-content p {
+    font-size: 1.2em; /* Font size */
+    margin-top: 20px; /* Margin on top */
+    line-height: 1.5; /* Line height */
+}
+
+/* Styling for call-to-action button */
+.cta-button {
+    margin-top: 30px; /* Margin on top */
+    padding: 15px 30px; /* Padding inside button */
+    background-color: #fff; /* White background */
+    color: #000; /* Black text color */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Font size */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for background and color */
+}
+
+/* Hover effect for call-to-action button */
+.cta-button:hover {
+    background-color: #000; /* Black background on hover */
+    color: #fff; /* White text color on hover */
+    border: 2px solid #fff; /* White border on hover */
+}
+
+/* Styling for footer */
+footer {
+    padding: 20px; /* Padding inside */
+    background-color: #111; /* Dark gray background */
+    text-align: center; /* Center text */
+    width: 100%; /* Full width */
+}
+
+/* Styling for footer paragraph */
+footer p {
+    margin: 0; /* Remove margin */
+    font-size: 0.9em; /* Font size */
+}
