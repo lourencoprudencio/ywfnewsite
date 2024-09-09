@@ -21,14 +21,13 @@ header {
     width: 100%; /* Full width */
     top: 0; /* Align at the top of the page */
     z-index: 1000; /* Ensure it stays above other content */
-    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for padding and background color */
 }
 
 /* Minimized state of the header */
 header.minimized {
     padding: 10px; /* Reduce padding */
     background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
-    transform: scale(0.9); /* Reduce size of the header */
 }
 
 /* Styling for the logo */
@@ -52,18 +51,12 @@ header.minimized .logo {
 nav ul {
     list-style: none; /* Remove default list styling */
     display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center items horizontally */
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
     gap: 20px; /* Space between items */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    transition: flex-direction 0.3s ease-in-out, gap 0.3s ease-in-out; /* Smooth transition for flex-direction and gap */
-}
-
-/* Adjust navigation menu layout when header is minimized */
-header.minimized nav ul {
-    flex-direction: row; /* Arrange items in a row */
-    gap: 10px; /* Reduce space between items */
 }
 
 /* Styling for list items in the navigation menu */
@@ -175,11 +168,4 @@ footer {
     padding: 20px; /* Padding inside */
     background-color: #111; /* Dark gray background */
     text-align: center; /* Center text */
-    width: 100%; /* Full width */
-}
-
-/* Styling for footer paragraph */
-footer p {
-    margin: 0; /* Remove margin */
-    font-size: 0.9em; /* Font size */
 }
