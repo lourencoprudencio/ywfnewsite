@@ -2,53 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> <!-- Character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design settings -->
-    <title>Top Secret - YWF♻️</title> <!-- Title of the webpage -->
-    <link rel="stylesheet" href="index.css"> <!-- Link to the external stylesheet -->
-    <link rel="icon" href="ywf.png" type="image/png"> <!-- Favicon for the webpage -->
+    <!-- Set character encoding and viewport for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>Top Secret - YWF♻️</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Favicon for the website -->
+    <link rel="icon" href="ywf.png" type="image/png">
 </head>
 
 <body>
-    <!-- Background video element -->
+    <!-- Background video that plays automatically, muted, and loops -->
     <video autoplay muted loop class="background-video">
-        <source src="backgroundvideo.mp4" type="video/mp4"> <!-- Source of the background video -->
-        <!-- Message for browsers that do not support the video tag -->
+        <source src="backgroundvideo.mp4" type="video/mp4">
+        <!-- Fallback message for browsers that don't support the video tag -->
         Your browser does not support the video tag.
     </video>
 
-    <!-- Logo image -->
-    <img src="YWF.png" alt="YWF♻️ Logo" class="logo"> <!-- Logo of the website -->
+    <!-- Brand logo image -->
+    <img src="YWF.png" alt="YWF♻️ Logo" class="logo">
 
     <div class="container">
         <div class="login-container">
-            <h1>YWF♻️ Access</h1> <!-- Main heading for the login section -->
-            <p>To unlock exclusive drops, please enter your username and password. This area is top secret.</p> <!-- Description text -->
-            <form id="loginForm"> <!-- Login form -->
-                <input type="text" id="username" placeholder="Enter username" required> <!-- Username input field -->
-                <input type="password" id="password" placeholder="Enter password" required> <!-- Password input field -->
-                <input type="submit" value="Enter"> <!-- Submit button -->
-                <div id="error" class="error-message"></div> <!-- Container for displaying error messages -->
+            <!-- Access message displayed above the login form -->
+            <p class="access-message"><strong>DROPS ARE ONLY ACCESSIBLE WITH PASSWORD</strong></p>
+            <!-- Login form for username and password -->
+            <form id="loginForm">
+                <!-- Username input field -->
+                <input type="text" id="username" placeholder="Enter username" required>
+                <!-- Password input field -->
+                <input type="password" id="password" placeholder="Enter password" required>
+                <!-- Submit button for the form -->
+                <input type="submit" value="Enter">
+                <!-- Error message container, hidden by default -->
+                <div id="error" class="error-message"></div>
             </form>
-            <button id="joinWhitelistBtn">Join Whitelist</button> <!-- Button to join the whitelist -->
+            <!-- Button to trigger the whitelist form -->
+            <button id="joinWhitelistBtn">Join Whitelist</button>
         </div>
+
+        <!-- Whitelist form container, initially hidden -->
         <div class="whitelist-form" id="whitelistFormContainer">
-            <h2>Join Whitelist</h2> <!-- Heading for the whitelist form -->
+            <!-- Title for the whitelist section -->
+            <h2>Join Whitelist</h2>
+            <!-- Fields for the whitelist form -->
             <div class="form-fields">
-                <input type="email" id="email" placeholder="Email" required> <!-- Email input field -->
-                <input type="text" id="firstName" placeholder="First Name" required> <!-- First name input field -->
-                <input type="text" id="lastName" placeholder="Last Name" required> <!-- Last name input field -->
-                <input type="text" id="phone" placeholder="Phone Number"> <!-- Phone number input field -->
+                <!-- Email input field -->
+                <input type="email" id="email" placeholder="Email" required>
+                <!-- First name input field -->
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <!-- Last name input field -->
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <!-- Optional phone number input field -->
+                <input type="text" id="phone" placeholder="Phone Number">
             </div>
-            <input type="submit" value="Submit"> <!-- Submit button for the whitelist form -->
+            <!-- Submit button for the whitelist form -->
+            <input type="submit" value="Submit">
+            <!-- Privacy policy note with a link -->
             <div class="privacy-note">
-                By joining, you agree to our <a href="#">Privacy Policy</a>. <!-- Privacy policy link -->
+                By joining, you agree to our <a href="#">Privacy Policy</a>.
             </div>
         </div>
     </div>
 
     <script>
-        // List of valid username and password combinations
+        // Array of valid username and password combinations
         const validCredentials = [
             { username: 'prudencio', password: 'prudencio' },
             { username: 'chico', password: 'chico' },
@@ -56,25 +76,29 @@
         ];
 
         // Event listener for the login form submission
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Check if the username and password combination is valid
+            // Check if the entered credentials match any in the validCredentials array
             const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
 
             if (isValid) {
-                window.location.href = 'mainpage.html'; // Redirect to mainpage.html if valid
+                // Redirect to main page if credentials are valid
+                window.location.href = 'mainpage.html';
             } else {
-                document.getElementById('error').textContent = 'Incorrect username or password. Please try again.'; // Display error message if invalid
+                // Show error message if credentials are invalid
+                document.getElementById('error').textContent = 'Incorrect username or password. Please try again.';
             }
         });
 
-        // Event listener for the whitelist button click
-        document.getElementById('joinWhitelistBtn').addEventListener('click', function() {
-            document.getElementById('whitelistFormContainer').classList.toggle('show'); // Toggle visibility of the whitelist form
-            this.classList.toggle('active'); // Toggle the 'active' class on the button
+        // Event listener for the "Join Whitelist" button click
+        document.getElementById('joinWhitelistBtn').addEventListener('click', function () {
+            // Toggle the visibility of the whitelist form
+            document.getElementById('whitelistFormContainer').classList.toggle('show');
+            // Toggle the active state of the button
+            this.classList.toggle('active');
         });
     </script>
 </body>
