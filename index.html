@@ -151,18 +151,21 @@
 
         /* Style for the whitelist form */
         .whitelist-form {
-            display: none;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
             margin-top: 20px;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the whitelist form */
-            padding: 20px;
+            padding: 0 20px;
             border-radius: 10px;
-            transition: opacity 0.3s ease-in-out;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
         }
 
         /* Style for showing the whitelist form */
         .whitelist-form.show {
-            display: block;
+            max-height: 500px; /* Adjust based on the content height */
             opacity: 1;
+            padding: 20px;
         }
 
         /* Style for the heading inside the whitelist form */
@@ -352,7 +355,7 @@
                 this.textContent = 'Join Whitelist';
             } else {
                 whitelistForm.classList.add('show');
-                this.textContent = 'Close Whitelist Form';
+                this.textContent = 'Close Whitelist';
                 this.classList.add('active');
             }
         });
