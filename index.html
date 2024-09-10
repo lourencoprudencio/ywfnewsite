@@ -2,29 +2,42 @@
 <html lang="en">
 
 <head>
-    <!-- Character encoding for the document -->
     <meta charset="UTF-8">
-    <!-- Responsive design settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the webpage -->
     <title>Top Secret - YWF♻️</title>
-    <!-- Link to the external stylesheet for styling -->
     <link rel="stylesheet" href="index.css">
-    <!-- Link to the favicon image -->
     <link rel="icon" href="ywf.png" type="image/png">
-    <!-- Internal style for the background video -->
     <style>
         .background-video {
-            pointer-events: none; /* Disable interaction with the video */
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .background-video.horizontal {
+            display: none; /* Hidden by default */
+        }
+        
+        .background-video.vertical {
+            display: none; /* Hidden by default */
         }
     </style>
 </head>
 
 <body>
-    <!-- Background video element with autoplay, muted, and loop attributes -->
-    <video autoplay muted loop class="background-video">
-        <source src="backgroundvideo.mp4" type="video/mp4">
-        <!-- Fallback text if the browser does not support the video tag -->
+    <!-- Background videos -->
+    <video autoplay muted loop class="background-video horizontal">
+        <source src="backgroundvideohorizontal.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <video autoplay muted loop class="background-video vertical">
+        <source src="backgroundvideovertical.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -33,22 +46,16 @@
 
     <!-- Container for login and whitelist form -->
     <div class="container">
-        <!-- Login container -->
         <div class="login-container">
-            <!-- Note about password protection -->
             <p class="password-note">DROPS ARE ONLY ACCESSIBLE WITH PASSWORD</p>
-            <!-- Login form -->
             <form id="loginForm">
                 <input type="text" id="username" placeholder="Enter username" required>
                 <input type="password" id="password" placeholder="Enter password" required>
                 <input type="submit" value="Enter">
-                <!-- Error message container -->
                 <div id="error" class="error-message"></div>
             </form>
-            <!-- Button to toggle the whitelist form -->
             <button id="joinWhitelistBtn">Join Whitelist</button>
         </div>
-        <!-- Whitelist form container -->
         <div class="whitelist-form" id="whitelistFormContainer">
             <h2>Join Whitelist</h2>
             <div class="form-fields">
@@ -64,18 +71,38 @@
         </div>
     </div>
 
-    <!-- Internal JavaScript for handling video and form functionality -->
     <script>
-        // Force the video to continue playing if it is paused
-        document.querySelector('.background-video').addEventListener('pause', function() {
-            this.play();
-        });
+        // Function to update the background video based on screen orientation
+        function updateBackgroundVideo() {
+            const horizontalVideo = document.querySelector('.background-video.horizontal');
+            const verticalVideo = document.querySelector('.background-video.vertical');
 
-        // Handle video playback on mobile devices
-        document.querySelector('.background-video').addEventListener('touchstart', function() {
-            if (this.paused) {
-                this.play();
+            if (window.innerWidth > window.innerHeight) {
+                // Landscape orientation
+                horizontalVideo.style.display = 'block';
+                verticalVideo.style.display = 'none';
+            } else {
+                // Portrait orientation
+                horizontalVideo.style.display = 'none';
+                verticalVideo.style.display = 'block';
             }
+        }
+
+        // Initial update and on resize
+        updateBackgroundVideo();
+        window.addEventListener('resize', updateBackgroundVideo);
+
+        // Force the video to continue playing if it is paused
+        document.querySelectorAll('.background-video').forEach(video => {
+            video.addEventListener('pause', function() {
+                this.play();
+            });
+
+            video.addEventListener('touchstart', function() {
+                if (this.paused) {
+                    this.play();
+                }
+            });
         });
 
         // Array of valid username and password combinations
