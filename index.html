@@ -2,37 +2,53 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding for the document -->
     <meta charset="UTF-8">
+    <!-- Responsive design settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
     <title>Top Secret - YWF♻️</title>
+    <!-- Link to the external stylesheet for styling -->
     <link rel="stylesheet" href="index.css">
+    <!-- Link to the favicon image -->
     <link rel="icon" href="ywf.png" type="image/png">
+    <!-- Internal style for the background video -->
     <style>
         .background-video {
-            pointer-events: none; /* Desativa a interação com o vídeo */
+            pointer-events: none; /* Disable interaction with the video */
         }
     </style>
 </head>
 
 <body>
+    <!-- Background video element with autoplay, muted, and loop attributes -->
     <video autoplay muted loop class="background-video">
         <source src="backgroundvideo.mp4" type="video/mp4">
+        <!-- Fallback text if the browser does not support the video tag -->
         Your browser does not support the video tag.
     </video>
 
+    <!-- Logo image -->
     <img src="YWF.png" alt="YWF♻️ Logo" class="logo">
 
+    <!-- Container for login and whitelist form -->
     <div class="container">
+        <!-- Login container -->
         <div class="login-container">
+            <!-- Note about password protection -->
             <p class="password-note">DROPS ARE ONLY ACCESSIBLE WITH PASSWORD</p>
+            <!-- Login form -->
             <form id="loginForm">
                 <input type="text" id="username" placeholder="Enter username" required>
                 <input type="password" id="password" placeholder="Enter password" required>
                 <input type="submit" value="Enter">
+                <!-- Error message container -->
                 <div id="error" class="error-message"></div>
             </form>
+            <!-- Button to toggle the whitelist form -->
             <button id="joinWhitelistBtn">Join Whitelist</button>
         </div>
+        <!-- Whitelist form container -->
         <div class="whitelist-form" id="whitelistFormContainer">
             <h2>Join Whitelist</h2>
             <div class="form-fields">
@@ -48,40 +64,48 @@
         </div>
     </div>
 
+    <!-- Internal JavaScript for handling video and form functionality -->
     <script>
-        // Forçar o vídeo a continuar reproduzindo se for pausado
+        // Force the video to continue playing if it is paused
         document.querySelector('.background-video').addEventListener('pause', function() {
             this.play();
         });
 
-        // Lidar com a reprodução do vídeo em dispositivos móveis
+        // Handle video playback on mobile devices
         document.querySelector('.background-video').addEventListener('touchstart', function() {
             if (this.paused) {
                 this.play();
             }
         });
 
+        // Array of valid username and password combinations
         const validCredentials = [
             { username: 'prudencio', password: 'prudencio' },
             { username: 'chico', password: 'chico' },
             // Add more combinations here
         ];
 
+        // Handle form submission
         document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent the default form submission behavior
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
+            // Check if the provided credentials are valid
             const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
 
             if (isValid) {
+                // Redirect to the main page if credentials are valid
                 window.location.href = 'mainpage.html';
             } else {
+                // Display an error message if credentials are invalid
                 document.getElementById('error').textContent = 'Incorrect username or password. Please try again.';
             }
         });
 
+        // Handle the click event for the whitelist button
         document.getElementById('joinWhitelistBtn').addEventListener('click', function() {
+            // Toggle visibility of the whitelist form
             document.getElementById('whitelistFormContainer').classList.toggle('show');
             this.classList.toggle('active');
         });

@@ -2,7 +2,7 @@
 body {
     margin: 0; /* Remove default margin */
     font-family: 'Arial', sans-serif; /* Apply Arial font */
-    background: url('LIVEYOURS.JPG') no-repeat center center/cover; /* Set background image to cover the entire page */
+    background: url('YWFONTOUR.jpg') no-repeat center center/cover; /*Verificar com o CHICO qual imagem usar ou LIVEYOURS.PNG*/ /* Set background image to cover the entire page */
     color: #fff; /* Set text color to white */
     overflow-x: hidden; /* Hide horizontal overflow */
     display: flex; /* Use flexbox for layout */

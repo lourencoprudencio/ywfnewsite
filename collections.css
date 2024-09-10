@@ -1,0 +1,141 @@
+/* Styling for the body element */
+body {
+    margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Apply Arial font */
+    background-color: #000; /* Set background color to black */
+    color: #fff; /* Set text color to white */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Styling for the header element */
+header {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center items horizontally */
+    padding: 20px; /* Padding inside the header */
+    background-color: #000; /* Black background color */
+    position: fixed; /* Fix the header at the top */
+    width: 100%; /* Full width */
+    top: 0; /* Align at the top of the page */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Styling for the logo */
+.logo {
+    width: 100px; /* Set width */
+    height: 100px; /* Set height */
+    background-image: url('YWF.png'); /* Set logo image */
+    background-size: contain; /* Scale the image to fit container */
+    background-repeat: no-repeat; /* Prevent image repeat */
+    background-position: center; /* Center the image */
+    margin-bottom: 20px; /* Margin below the logo */
+}
+
+/* Styling for navigation menu */
+nav ul {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Styling for list items in the navigation menu */
+nav ul li {
+    position: relative; /* Position relative for child elements */
+}
+
+/* Styling for links in the navigation menu */
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #bbb; /* Light gray text color */
+    font-size: 1.2em; /* Font size */
+}
+
+/* Styling for the collections section */
+.collections-section {
+    margin-top: 120px; /* Margin to account for fixed header */
+    padding: 20px; /* Padding inside the section */
+    text-align: center; /* Center text */
+}
+
+.collections-section h1 {
+    font-size: 2.5em; /* Font size for heading */
+    margin-bottom: 20px; /* Margin below the heading */
+}
+
+/* Carousel styling */
+.carousel-container {
+    position: relative; /* Relative positioning for the carousel */
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hide overflow */
+}
+
+.carousel {
+    display: flex; /* Use flexbox for layout */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Relative positioning for carousel items */
+}
+
+.carousel-track {
+    display: flex; /* Use flexbox for carousel items */
+    transition: transform 0.3s ease; /* Smooth transition for sliding */
+}
+
+.carousel-item {
+    min-width: 100%; /* Each item takes full width */
+    box-sizing: border-box; /* Include padding and border in width */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.carousel-button {
+    position: absolute; /* Absolute positioning for buttons */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust vertical alignment */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px; /* Padding for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1; /* Ensure buttons are above carousel items */
+}
+
+.carousel-button.prev {
+    left: 10px; /* Position to the left */
+}
+
+.carousel-button.next {
+    right: 10px; /* Position to the right */
+}
+
+/* Styling for collection items within the carousel */
+.collection-link {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* White text color */
+    text-align: center; /* Center text */
+}
+
+.collection-logo {
+    width: 150px; /* Set width for collection logo */
+    height: 150px; /* Set height for collection logo */
+    margin-bottom: 10px; /* Margin below the logo */
+}
+
+.collection-item h2 {
+    font-size: 1.5em; /* Font size for collection name */
+}
+
+/* Styling for footer */
+footer {
+    padding: 20px; /* Padding inside */
+    background-color: transparent; /* Removed background color */
+    text-align: center; /* Center text */
+}
