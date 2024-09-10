@@ -7,6 +7,11 @@
     <title>Top Secret - YWF♻️</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="ywf.png" type="image/png">
+    <style>
+        .background-video {
+            pointer-events: none; /* Desativa a interação com o vídeo */
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +24,7 @@
 
     <div class="container">
         <div class="login-container">
-            <h1>DROPS ARE ONLY ACCESSIBLE WITH PASSWORD</h1>
+            <p class="password-note">DROPS ARE ONLY ACCESSIBLE WITH PASSWORD</p>
             <form id="loginForm">
                 <input type="text" id="username" placeholder="Enter username" required>
                 <input type="password" id="password" placeholder="Enter password" required>
@@ -44,9 +49,22 @@
     </div>
 
     <script>
+        // Forçar o vídeo a continuar reproduzindo se for pausado
+        document.querySelector('.background-video').addEventListener('pause', function() {
+            this.play();
+        });
+
+        // Lidar com a reprodução do vídeo em dispositivos móveis
+        document.querySelector('.background-video').addEventListener('touchstart', function() {
+            if (this.paused) {
+                this.play();
+            }
+        });
+
         const validCredentials = [
             { username: 'prudencio', password: 'prudencio' },
             { username: 'chico', password: 'chico' },
+            // Add more combinations here
         ];
 
         document.getElementById('loginForm').addEventListener('submit', function(e) {

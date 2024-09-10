@@ -44,7 +44,7 @@ header.minimized {
 
 /* Adjust logo size when header is minimized */
 header.minimized .logo {
-    width: 150px; /* Reduce logo size */
+    width: 80px; /* Reduce logo size */
 }
 
 /* Styling for navigation menu */
