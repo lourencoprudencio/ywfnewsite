@@ -2,7 +2,7 @@
 body {
     margin: 0; /* Remove default margin */
     font-family: 'Arial', sans-serif; /* Apply Arial font */
-    background-color: #000; /* Set background color to black */
+    background: url('LIVEYOURS.JPG') no-repeat center center/cover; /* Set background image to cover the entire page */
     color: #fff; /* Set text color to white */
     overflow-x: hidden; /* Hide horizontal overflow */
     display: flex; /* Use flexbox for layout */
@@ -104,7 +104,7 @@ nav ul li a:hover {
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
-    background: url('your-image.jpg') no-repeat center center/cover; /* Background image with cover */
+    background: transparent; /* No background for hero section */
     text-align: center; /* Center text */
     position: relative; /* Position relative for overlay */
     margin-top: 120px; /* Margin to account for fixed header */
@@ -153,6 +153,7 @@ nav ul li a:hover {
     border: none; /* No border */
     cursor: pointer; /* Pointer cursor on hover */
     font-size: 1em; /* Font size */
+    text-decoration: none; /* Remove underline */
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for background and color */
 }
 
@@ -166,7 +167,7 @@ nav ul li a:hover {
 /* Styling for footer */
 footer {
     padding: 20px; /* Padding inside */
-    background-color: #111; /* Dark gray background */
+    background-color: transparent; /* Removed background color */
     text-align: center; /* Center text */
 }
 
