@@ -1,141 +1,228 @@
 /* Styling for the body element */
 body {
-    margin: 0; /* Remove default margin */
-    font-family: 'Arial', sans-serif; /* Apply Arial font */
-    background-color: #000; /* Set background color to black */
-    color: #fff; /* Set text color to white */
-    overflow-x: hidden; /* Hide horizontal overflow */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center items horizontally */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Styling for the header element */
 header {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center items horizontally */
-    padding: 20px; /* Padding inside the header */
-    background-color: #000; /* Black background color */
-    position: fixed; /* Fix the header at the top */
-    width: 100%; /* Full width */
-    top: 0; /* Align at the top of the page */
-    z-index: 1000; /* Ensure it stays above other content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Minimized state of the header */
+header.minimized {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Styling for the logo */
 .logo {
-    width: 100px; /* Set width */
-    height: 100px; /* Set height */
-    background-image: url('YWF.png'); /* Set logo image */
-    background-size: contain; /* Scale the image to fit container */
-    background-repeat: no-repeat; /* Prevent image repeat */
-    background-position: center; /* Center the image */
-    margin-bottom: 20px; /* Margin below the logo */
+    width: 100px;
+    height: 100px;
+    background-image: url('YWF.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Adjust logo size when header is minimized */
+header.minimized .logo {
+    width: 80px;
 }
 
 /* Styling for navigation menu */
 nav ul {
-    list-style: none; /* Remove default list styling */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: row; /* Arrange items in a row */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    gap: 20px; /* Space between items */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Styling for list items in the navigation menu */
 nav ul li {
-    position: relative; /* Position relative for child elements */
+    position: relative;
 }
 
 /* Styling for links in the navigation menu */
 nav ul li a {
-    text-decoration: none; /* Remove underline */
-    color: #bbb; /* Light gray text color */
-    font-size: 1.2em; /* Font size */
+    text-decoration: none;
+    color: #bbb;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+/* Adjust font size of links when header is minimized */
+header.minimized nav ul li a {
+    font-size: 1em;
+}
+
+/* Underline effect for links */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease-in-out;
+    margin-top: 5px;
+}
+
+/* Expand underline effect on hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Change text color on hover */
+nav ul li a:hover {
+    color: #fff;
 }
 
 /* Styling for the collections section */
 .collections-section {
-    margin-top: 120px; /* Margin to account for fixed header */
-    padding: 20px; /* Padding inside the section */
-    text-align: center; /* Center text */
+    margin-top: 120px;
+    padding: 20px;
+    text-align: center;
 }
 
 .collections-section h1 {
-    font-size: 2.5em; /* Font size for heading */
-    margin-bottom: 20px; /* Margin below the heading */
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 /* Carousel styling */
 .carousel-container {
-    position: relative; /* Relative positioning for the carousel */
-    width: 100%; /* Full width */
-    overflow: hidden; /* Hide overflow */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .carousel {
-    display: flex; /* Use flexbox for layout */
-    overflow: hidden; /* Hide overflow */
-    position: relative; /* Relative positioning for carousel items */
+    display: flex;
+    overflow: hidden;
+    position: relative;
 }
 
 .carousel-track {
-    display: flex; /* Use flexbox for carousel items */
-    transition: transform 0.3s ease; /* Smooth transition for sliding */
+    display: flex;
+    transition: transform 0.3s ease;
 }
 
 .carousel-item {
-    min-width: 100%; /* Each item takes full width */
-    box-sizing: border-box; /* Include padding and border in width */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-button {
-    position: absolute; /* Absolute positioning for buttons */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust vertical alignment */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: #fff; /* White text color */
-    border: none; /* Remove border */
-    padding: 10px; /* Padding for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    z-index: 1; /* Ensure buttons are above carousel items */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .carousel-button.prev {
-    left: 10px; /* Position to the left */
+    left: 10px;
 }
 
 .carousel-button.next {
-    right: 10px; /* Position to the right */
+    right: 10px;
 }
 
 /* Styling for collection items within the carousel */
 .collection-link {
-    text-decoration: none; /* Remove underline */
-    color: #fff; /* White text color */
-    text-align: center; /* Center text */
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
 }
 
 .collection-logo {
-    width: 150px; /* Set width for collection logo */
-    height: 150px; /* Set height for collection logo */
-    margin-bottom: 10px; /* Margin below the logo */
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
 }
 
 .collection-item h2 {
-    font-size: 1.5em; /* Font size for collection name */
+    font-size: 1.5em;
 }
 
 /* Styling for footer */
 footer {
-    padding: 20px; /* Padding inside */
-    background-color: transparent; /* Removed background color */
-    text-align: center; /* Center text */
+    padding: 20px;
+    background-color: transparent;
+    text-align: center;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+    }
+
+    .logo {
+        width: 80px;
+    }
+}
+
+/* Additional responsive design for very small devices */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+    }
+
+    .logo {
+        width: 60px;
+    }
 }
