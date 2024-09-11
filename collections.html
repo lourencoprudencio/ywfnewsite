@@ -1,61 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declares the document type and version of HTML -->
+<html lang="en"> <!-- Start of the HTML document with language set to English -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collections - YWF♻️</title>
-    <link rel="stylesheet" href="collections.css">
-    <link rel="icon" href="YWF.png" type="image/png">
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 for proper text rendering -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on different devices -->
+    <title>Collections - YWF♻️</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="collections.css"> <!-- Links to the external CSS file for styling -->
+    <link rel="icon" href="YWF.png" type="image/png"> <!-- Sets the favicon for the webpage -->
 </head>
 
 <body>
-    <header id="header">
-        <div class="logo"></div>
+    <header id="header"> <!-- Header section with an ID for JavaScript interaction -->
+        <div class="logo"></div> <!-- Placeholder for the logo image -->
         <nav>
-            <ul>
-                <li><a href="mainpage.html">Home</a></li>
-                <li><a href="brandhistory.html">Brand History</a></li>
-                <li><a href="collections.html">Collections</a></li>
-                <li><a href="#support">Support</a></li>
-                <li><a href="#partnerships">Partnerships</a></li>
+            <ul> <!-- Unordered list for the navigation menu -->
+                <li><a href="mainpage.html">Home</a></li> <!-- Navigation link to the home page -->
+                <li><a href="brandhistory.html">Brand History</a></li> <!-- Navigation link to the brand history page -->
+                <li><a href="collections.html">Collections</a></li> <!-- Navigation link to the collections page -->
+                <li><a href="#support">Support</a></li> <!-- Navigation link to the support section (anchor link) -->
+                <li><a href="#partnerships">Partnerships</a></li> <!-- Navigation link to the partnerships section (anchor link) -->
             </ul>
         </nav>
     </header>
 
-    <section class="collections-section">
-        <h1>Our Collections</h1>
-        <div class="carousel-container">
-            <button class="carousel-button prev">&#10094;</button>
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="collection-item">
-                        <a href="fightcollection.html" class="collection-link">
-                            <img src="ywf.png" alt="Fight Collection Logo" class="collection-logo">
-                            <h2>Fight Collection</h2>
+    <section class="collections-section"> <!-- Section to display collections -->
+        <h1>Our Collections</h1> <!-- Main heading for the collections section -->
+        <div class="carousel-container"> <!-- Container for the carousel component -->
+            <button class="carousel-button prev">&#10094;</button> <!-- Button for moving to the previous carousel item -->
+            <div class="carousel"> <!-- Wrapper for carousel items -->
+                <div class="carousel-track"> <!-- Track that contains all carousel items -->
+                    <div class="collection-item"> <!-- Individual item within the carousel -->
+                        <a href="fightcollection.html" class="collection-link"> <!-- Link to the fight collection page -->
+                            <img src="ywf.png" alt="Fight Collection Logo" class="collection-logo"> <!-- Image representing the collection -->
+                            <h2>Fight Collection</h2> <!-- Title for the collection item -->
                         </a>
                     </div>
                 </div>
             </div>
-            <button class="carousel-button next">&#10095;</button>
+            <button class="carousel-button next">&#10095;</button> <!-- Button for moving to the next carousel item -->
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 YWF♻️ - Young Wild Free. All rights reserved.</p>
+    <footer> <!-- Footer section -->
+        <p>&copy; 2024 YWF♻️ - Young Wild Free. All rights reserved.</p> <!-- Copyright notice -->
     </footer>
 
-    <script src="carousel.js"></script>
+    <script src="carousel.js"></script> <!-- Links to the external JavaScript file for carousel functionality -->
     <script>
+        // Wait for the DOM to fully load before running the script
         document.addEventListener('DOMContentLoaded', function() {
-            const header = document.getElementById('header');
-            const threshold = 100;
+            const header = document.getElementById('header'); // Select the header element by its ID
+            const threshold = 100; // Define the scroll position threshold for header minimization
 
+            // Add an event listener for the scroll event
             window.addEventListener('scroll', function() {
+                // Check if the vertical scroll position is greater than the threshold
                 if (window.scrollY > threshold) {
-                    header.classList.add('minimized');
+                    header.classList.add('minimized'); // Add 'minimized' class to the header if scrolled past threshold
                 } else {
-                    header.classList.remove('minimized');
+                    header.classList.remove('minimized'); // Remove 'minimized' class if scroll position is above threshold
                 }
             });
         });

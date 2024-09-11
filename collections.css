@@ -1,228 +1,228 @@
 /* Styling for the body element */
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Set font family */
+    background-color: #000; /* Set background color to black */
+    color: #fff; /* Set text color to white */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center align children horizontally */
 }
 
 /* Styling for the header element */
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #000;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center align children horizontally */
+    padding: 20px; /* Add padding around content */
+    background-color: #000; /* Set background color to black */
+    position: fixed; /* Fix header to the top of the viewport */
+    width: 100%; /* Full width of the viewport */
+    top: 0; /* Align to the top */
+    z-index: 1000; /* Ensure it is above other content */
+    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for padding and background color changes */
 }
 
 /* Minimized state of the header */
 header.minimized {
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px; /* Reduced padding when minimized */
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background when minimized */
 }
 
 /* Styling for the logo */
 .logo {
-    width: 100px;
-    height: 100px;
-    background-image: url('YWF.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-bottom: 20px;
-    transition: width 0.3s ease-in-out;
+    width: 100px; /* Set logo width */
+    height: 100px; /* Set logo height */
+    background-image: url('YWF.png'); /* Set logo image */
+    background-size: contain; /* Ensure image fits within dimensions */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center; /* Center image within the element */
+    margin-bottom: 20px; /* Space below the logo */
+    transition: width 0.3s ease-in-out; /* Smooth transition for width changes */
 }
 
 /* Adjust logo size when header is minimized */
 header.minimized .logo {
-    width: 80px;
+    width: 80px; /* Reduce logo width when minimized */
 }
 
 /* Styling for navigation menu */
 nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center align items vertically */
+    justify-content: center; /* Center align items horizontally */
+    gap: 20px; /* Space between items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 /* Styling for list items in the navigation menu */
 nav ul li {
-    position: relative;
+    position: relative; /* Positioning context for child elements */
 }
 
 /* Styling for links in the navigation menu */
 nav ul li a {
-    text-decoration: none;
-    color: #bbb;
-    font-size: 1.2em;
-    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    text-decoration: none; /* Remove underline from links */
+    color: #bbb; /* Set link color */
+    font-size: 1.2em; /* Set font size */
+    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out; /* Smooth transition for color and font size changes */
 }
 
 /* Adjust font size of links when header is minimized */
 header.minimized nav ul li a {
-    font-size: 1em;
+    font-size: 1em; /* Reduce font size when header is minimized */
 }
 
 /* Underline effect for links */
 nav ul li a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.3s ease-in-out;
-    margin-top: 5px;
+    content: ''; /* Create a pseudo-element */
+    display: block; /* Make it a block element */
+    width: 0; /* Start with no underline width */
+    height: 2px; /* Set underline height */
+    background: #fff; /* Set underline color */
+    transition: width 0.3s ease-in-out; /* Smooth transition for underline width */
+    margin-top: 5px; /* Space above the underline */
 }
 
 /* Expand underline effect on hover */
 nav ul li a:hover::after {
-    width: 100%;
+    width: 100%; /* Expand underline to full width on hover */
 }
 
 /* Change text color on hover */
 nav ul li a:hover {
-    color: #fff;
+    color: #fff; /* Change link color on hover */
 }
 
 /* Styling for the collections section */
 .collections-section {
-    margin-top: 120px;
-    padding: 20px;
-    text-align: center;
+    margin-top: 120px; /* Space above the section */
+    padding: 20px; /* Add padding around content */
+    text-align: center; /* Center align text */
 }
 
 .collections-section h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 2.5em; /* Set font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
 }
 
 /* Carousel styling */
 .carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+    position: relative; /* Positioning context for carousel controls */
+    width: 100%; /* Full width of the viewport */
+    overflow: hidden; /* Hide overflow content */
 }
 
 .carousel {
-    display: flex;
-    overflow: hidden;
-    position: relative;
+    display: flex; /* Use flexbox for layout */
+    overflow: hidden; /* Hide overflow content */
+    position: relative; /* Positioning context for carousel items */
 }
 
 .carousel-track {
-    display: flex;
-    transition: transform 0.3s ease;
+    display: flex; /* Use flexbox for item arrangement */
+    transition: transform 0.3s ease; /* Smooth transition for item movement */
 }
 
 .carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-width: 100%; /* Each item takes full width of the container */
+    box-sizing: border-box; /* Include padding and border in item width */
+    display: flex; /* Use flexbox for item layout */
+    justify-content: center; /* Center align content horizontally */
+    align-items: center; /* Center align content vertically */
 }
 
 .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1;
+    position: absolute; /* Position button relative to container */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff; /* Set button text color */
+    border: none; /* Remove default border */
+    padding: 10px; /* Add padding inside button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    z-index: 1; /* Ensure button is above other content */
 }
 
 .carousel-button.prev {
-    left: 10px;
+    left: 10px; /* Position previous button on the left */
 }
 
 .carousel-button.next {
-    right: 10px;
+    right: 10px; /* Position next button on the right */
 }
 
 /* Styling for collection items within the carousel */
 .collection-link {
-    text-decoration: none;
-    color: #fff;
-    text-align: center;
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Set link color */
+    text-align: center; /* Center align text */
 }
 
 .collection-logo {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 10px;
+    width: 150px; /* Set logo width */
+    height: 150px; /* Set logo height */
+    margin-bottom: 10px; /* Space below the logo */
 }
 
 .collection-item h2 {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Set font size for the collection item heading */
 }
 
 /* Styling for footer */
 footer {
-    padding: 20px;
-    background-color: transparent;
-    text-align: center;
+    padding: 20px; /* Add padding around content */
+    background-color: transparent; /* Transparent background */
+    text-align: center; /* Center align text */
 }
 
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2em;
+        font-size: 2em; /* Adjust heading font size */
     }
 
     .hero-content p {
-        font-size: 1em;
+        font-size: 1em; /* Adjust paragraph font size */
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column; /* Stack navigation items vertically */
+        gap: 10px; /* Space between items */
     }
 
     nav ul li a {
-        font-size: 1em;
+        font-size: 1em; /* Adjust font size of links */
     }
 
     .logo {
-        width: 80px;
+        width: 80px; /* Reduce logo width */
     }
 }
 
 /* Additional responsive design for very small devices */
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Further adjust heading font size */
     }
 
     .hero-content p {
-        font-size: 0.9em;
+        font-size: 0.9em; /* Further adjust paragraph font size */
     }
 
     nav ul {
-        gap: 5px;
+        gap: 5px; /* Reduce space between items */
     }
 
     nav ul li a {
-        font-size: 0.9em;
+        font-size: 0.9em; /* Further adjust font size of links */
     }
 
     .logo {
-        width: 60px;
+        width: 60px; /* Further reduce logo width */
     }
 }
