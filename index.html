@@ -9,8 +9,7 @@
     <link rel="icon" href="ywf.png" type="image/png">
     <style>
         .background-video {
-            pointer-events: none; /* Desativa a interação com o vídeo */
-            user-select: none; /* Evita a seleção do vídeo */
+            pointer-events: none;
             position: absolute;
             top: 0;
             left: 0;
@@ -19,33 +18,33 @@
             object-fit: cover;
             z-index: -1;
         }
-
+        
         .background-video.horizontal {
-            display: none; /* Escondido por padrão */
+            display: none; /* Hidden by default */
         }
-
+        
         .background-video.vertical {
-            display: none; /* Escondido por padrão */
+            display: none; /* Hidden by default */
         }
     </style>
 </head>
 
 <body>
-    <!-- Vídeos de fundo -->
+    <!-- Background videos -->
     <video autoplay muted loop class="background-video horizontal">
         <source src="backgroundvideohorizontal.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
+    
     <video autoplay muted loop class="background-video vertical">
         <source src="backgroundvideovertical.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Imagem do logo -->
+    <!-- Logo image -->
     <img src="YWF.png" alt="YWF♻️ Logo" class="logo">
 
-    <!-- Container para formulário de login e whitelist -->
+    <!-- Container for login and whitelist form -->
     <div class="container">
         <div class="login-container">
             <p class="password-note">DROPS ARE ONLY ACCESSIBLE WITH PASSWORD</p>
@@ -73,27 +72,27 @@
     </div>
 
     <script>
-        // Função para atualizar o vídeo de fundo com base na orientação da tela
+        // Function to update the background video based on screen orientation
         function updateBackgroundVideo() {
             const horizontalVideo = document.querySelector('.background-video.horizontal');
             const verticalVideo = document.querySelector('.background-video.vertical');
 
             if (window.innerWidth > window.innerHeight) {
-                // Orientação paisagem
+                // Landscape orientation
                 horizontalVideo.style.display = 'block';
                 verticalVideo.style.display = 'none';
             } else {
-                // Orientação retrato
+                // Portrait orientation
                 horizontalVideo.style.display = 'none';
                 verticalVideo.style.display = 'block';
             }
         }
 
-        // Atualização inicial e ao redimensionar
+        // Initial update and on resize
         updateBackgroundVideo();
         window.addEventListener('resize', updateBackgroundVideo);
 
-        // Força o vídeo a continuar tocando se for pausado
+        // Force the video to continue playing if it is paused
         document.querySelectorAll('.background-video').forEach(video => {
             video.addEventListener('pause', function() {
                 this.play();
@@ -106,34 +105,34 @@
             });
         });
 
-        // Array de combinações de nome de usuário e senha válidas
+        // Array of valid username and password combinations
         const validCredentials = [
             { username: 'prudencio', password: 'prudencio' },
             { username: 'chico', password: 'chico' },
-            // Adicione mais combinações aqui
+            // Add more combinations here
         ];
 
-        // Manipula a submissão do formulário
+        // Handle form submission
         document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita o comportamento padrão de submissão do formulário
+            e.preventDefault(); // Prevent the default form submission behavior
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Verifica se as credenciais fornecidas são válidas
+            // Check if the provided credentials are valid
             const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
 
             if (isValid) {
-                // Redireciona para a página principal se as credenciais forem válidas
+                // Redirect to the main page if credentials are valid
                 window.location.href = 'mainpage.html';
             } else {
-                // Exibe uma mensagem de erro se as credenciais forem inválidas
+                // Display an error message if credentials are invalid
                 document.getElementById('error').textContent = 'Incorrect username or password. Please try again.';
             }
         });
 
-        // Manipula o evento de clique para o botão de whitelist
+        // Handle the click event for the whitelist button
         document.getElementById('joinWhitelistBtn').addEventListener('click', function() {
-            // Alterna a visibilidade do formulário de whitelist
+            // Toggle visibility of the whitelist form
             document.getElementById('whitelistFormContainer').classList.toggle('show');
             this.classList.toggle('active');
         });

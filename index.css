@@ -21,7 +21,6 @@ body {
 /* Styling for the background video */
 .background-video {
     pointer-events: none;
-    user-select: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -273,7 +272,7 @@ body {
     }
 }
 
-/* Responsive styles para screens menores que 400px */
+/* Responsive styles for screens menores que 400px */
 @media (max-width: 400px) {
     .login-container p {
         font-size: 0.8em;
