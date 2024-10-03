@@ -25,7 +25,7 @@ body {
 
 /* Styling for the logo */
 .logo {
-    width: 150px; /* Fixed width for logo */
+    width: 250px; /* Increased width for the logo */
     margin-bottom: 30px; /* Space below the logo */
     transition: transform 0.3s ease; /* Smooth transition for scaling effect */
 }
@@ -122,7 +122,7 @@ body {
 
     /* Reduce the logo size for better proportion */
     .logo {
-        width: 120px;
+        width: 180px; /* Adjusted size for tablets */
     }
 }
 
@@ -145,6 +145,6 @@ body {
 
     /* Further reduce logo size for small screens */
     .logo {
-        width: 100px;
+        width: 150px; /* Adjusted size for mobile */
     }
 }
