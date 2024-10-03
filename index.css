@@ -106,6 +106,12 @@ body {
     color: #fff; /* White text on hover */
 }
 
+/* TikTok hover effect */
+.tiktok:hover {
+    background-color: #000; /* TikTok black */
+    color: #fff; /* White text on hover */
+}
+
 /* Media queries for responsive design */
 /* For medium-sized screens like tablets */
 @media (max-width: 768px) {
