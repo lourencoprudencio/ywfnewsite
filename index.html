@@ -1,166 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <!-- Character encoding for the document -->
     <meta charset="UTF-8">
-    <!-- Viewport settings for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the page displayed in the browser tab -->
-    <title>Top Secret - YWF♻️</title>
-    <!-- Link to external stylesheet -->
+    <title>YWF - Social Media</title>
+    <link rel="icon" href="YWF.PNG">
     <link rel="stylesheet" href="index.css">
-    <!-- Favicon for the website -->
-    <link rel="icon" href="ywf.png" type="image/png">
-    <style>
-        /* Styling for the background video */
-        .background-video {
-            pointer-events: none; /* Disable user interaction with the video */
-            position: absolute; /* Position video absolutely */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
-            width: 100%; /* Full width of the parent */
-            height: 100%; /* Full height of the parent */
-            object-fit: cover; /* Cover the container while maintaining aspect ratio */
-            z-index: -1; /* Place behind other elements */
-        }
-
-        /* Hide horizontal background video by default */
-        .background-video.horizontal {
-            display: none;
-        }
-
-        /* Hide vertical background video by default */
-        .background-video.vertical {
-            display: none;
-        }
-    </style>
+    <!-- Font Awesome CDN for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Background videos for different orientations -->
-    <video autoplay muted loop class="background-video horizontal">
-        <source src="backgroundvideohorizontal.mp4" type="video/mp4">
-        <!-- Fallback text if the video tag is not supported -->
-        Your browser does not support the video tag.
-    </video>
-    
-    <video autoplay muted loop class="background-video vertical">
-        <source src="backgroundvideovertical.mp4" type="video/mp4">
-        <!-- Fallback text if the video tag is not supported -->
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Logo image -->
-    <img src="YWF.png" alt="YWF♻️ Logo" class="logo">
-
-    <!-- Container for login and whitelist form -->
     <div class="container">
-        <!-- Login form container -->
-        <div class="login-container">
-            <!-- Note about password requirement -->
-            <p class="password-note">DROPS ARE ONLY ACCESSIBLE WITH PASSWORD</p>
-            <form id="loginForm">
-                <!-- Username input field -->
-                <input type="text" id="username" placeholder="Enter username" required>
-                <!-- Password input field -->
-                <input type="password" id="password" placeholder="Enter password" required>
-                <!-- Submit button -->
-                <input type="submit" value="Enter">
-                <!-- Error message display -->
-                <div id="error" class="error-message"></div>
-            </form>
-            <!-- Button to join the whitelist -->
-            <button id="joinWhitelistBtn">Join Whitelist</button>
-        </div>
-        <!-- Whitelist form container -->
-        <div class="whitelist-form" id="whitelistFormContainer">
-            <h2>Join Whitelist</h2>
-            <div class="form-fields">
-                <!-- Email input field -->
-                <input type="email" id="email" placeholder="Email" required>
-                <!-- First name input field -->
-                <input type="text" id="firstName" placeholder="First Name" required>
-                <!-- Last name input field -->
-                <input type="text" id="lastName" placeholder="Last Name" required>
-                <!-- Phone number input field -->
-                <input type="text" id="phone" placeholder="Phone Number">
-            </div>
-            <!-- Submit button for whitelist form -->
-            <input type="submit" value="Submit">
-            <!-- Privacy note with link to privacy policy -->
-            <div class="privacy-note">
-                By joining, you agree to our <a href="privacypolicy.html">Privacy Policy</a>.
-            </div>
-        </div>
+        <!-- Link the logo to the homepage -->
+        <a href="codescreen.html">
+            <img src="YWF.PNG" alt="YWF Logo" class="logo">
+        </a>
+        
+        <!-- Social media list in a vertical column -->
+        <ul class="social-list">
+            <!-- Instagram social link -->
+            <li><a href="https://www.instagram.com/ywf.eu" target="_blank" class="social instagram">
+                <i class="fab fa-instagram"></i> Instagram</a></li>
+            
+            <!-- YouTube social link -->
+            <li><a href="https://www.youtube.com" target="_blank" class="social youtube">
+                <i class="fab fa-youtube"></i> YouTube</a></li>
+            
+            <!-- Pinterest social link -->
+            <li><a href="https://pt.pinterest.com/ywfeu/" target="_blank" class="social pinterest">
+                <i class="fab fa-pinterest"></i> Pinterest</a></li>
+
+            <!-- Twitter social link -->
+            <li><a href="https://www.twitter.com" target="_blank" class="social twitter">
+                <i class="fab fa-twitter"></i> Twitter</a></li>
+            
+            <!-- Spotify social link (moved before LinkedIn) -->
+            <li><a href="https://open.spotify.com/user/31go5j4quq7wr6quqaojhi4c6fc4?si=1b31331f896f4fbc" target="_blank" class="social spotify">
+                <i class="fab fa-spotify"></i> Spotify</a></li>
+
+            <!-- LinkedIn social link -->
+            <li><a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+                <i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
     </div>
-
-    <!-- Include CryptoJS library for hashing passwords -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    
-    <script>
-        // Function to update the background video based on screen orientation
-        function updateBackgroundVideo() {
-            const horizontalVideo = document.querySelector('.background-video.horizontal');
-            const verticalVideo = document.querySelector('.background-video.vertical');
-
-            if (window.innerWidth > window.innerHeight) {
-                // Landscape orientation
-                horizontalVideo.style.display = 'block'; // Show horizontal video
-                verticalVideo.style.display = 'none'; // Hide vertical video
-            } else {
-                // Portrait orientation
-                horizontalVideo.style.display = 'none'; // Hide horizontal video
-                verticalVideo.style.display = 'block'; // Show vertical video
-            }
-        }
-
-        // Initial call to update the background video and on window resize
-        updateBackgroundVideo();
-        window.addEventListener('resize', updateBackgroundVideo);
-
-        // Force the video to continue playing if it is paused
-        document.querySelectorAll('.background-video').forEach(video => {
-            video.addEventListener('pause', function() {
-                this.play(); // Resume video playback
-            });
-
-            video.addEventListener('touchstart', function() {
-                if (this.paused) {
-                    this.play(); // Resume video playback on touch
-                }
-            });
-        });
-
-        // Array of valid credentials with their hashed passwords
-        const validCredentials = [
-            { username: 'prudencio', passwordHash: '9e54991283343d6e36e66fa951dbe48c4fe2ca189d2213fc36c1b6698f5443ad' },
-            { username: 'chico', passwordHash: '5a7e7a8a9bdc586be12dbd7a179d25531420805ebf09054c004fc891df57f205' }
-        ];
-
-        // Handle form submission
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent the default form submission behavior
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const passwordHash = CryptoJS.SHA256(password).toString(); // Hash the provided password
-
-            // Check if the provided credentials are valid
-            const isValid = validCredentials.some(cred => cred.username === username && cred.passwordHash === passwordHash);
-
-            if (isValid) {
-                // Redirect to the main page if credentials are valid
-                window.location.href = 'mainpage.html';
-            } else {
-                // Display an error message if credentials are invalid
-                document.getElementById('error').textContent = 'Incorrect username or password. Please try again.';
-            }
-        });
-
-        // Handle the click event for the whitelist button
-        document.getElementById('joinWhitelistBtn').addEventListener('click', function() {
-            // Toggle the visibility of the whitelist form
-            document.getElementById('whitelistFormContainer').classList.toggle('show');
-            this.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>

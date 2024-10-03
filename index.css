@@ -1,280 +1,150 @@
-/* Import Helvetica font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap');
-
-/* Import Black Ops One font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-
-/* Styling for the body of the page */
-body {
-    margin: 0; /* Remove default margin */
-    font-family: 'Black Ops One', sans-serif; /* Apply Black Ops One font for text */
-    color: #fff; /* Set text color to white */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow content */
-    position: relative; /* Establish a positioning context */
-    background: #000; /* Set background color to black */
+/* General reset to remove margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Styling for the background video */
-.background-video {
-    pointer-events: none; /* Disable pointer events (e.g., clicking) */
-    position: absolute; /* Position the video absolutely */
-    top: 0; /* Align to the top of the parent */
-    left: 0; /* Align to the left of the parent */
-    width: 100%; /* Full width of the parent */
-    height: 100%; /* Full height of the parent */
-    object-fit: cover; /* Scale the video to cover the container while maintaining aspect ratio */
-    z-index: -1; /* Place the video behind other elements */
+/* Basic styling for the page */
+body {
+    background-color: #000; /* Black background */
+    font-family: Arial, sans-serif; /* Default font */
+    color: #fff; /* White text */
+    display: flex; /* Flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px; /* Padding for small devices */
+}
+
+/* Container to center all content */
+.container {
+    text-align: center;
+    max-width: 100%; /* Make sure the container does not exceed full width */
 }
 
 /* Styling for the logo */
 .logo {
-    position: absolute; /* Position the logo absolutely */
-    top: 20px; /* Align to 20px from the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to center the logo exactly */
-    width: 150px; /* Set fixed width */
-    max-width: 100%; /* Ensure the logo does not exceed the container width */
+    width: 150px; /* Fixed width for logo */
+    margin-bottom: 30px; /* Space below the logo */
+    transition: transform 0.3s ease; /* Smooth transition for scaling effect */
 }
 
-/* Container for login and whitelist form */
-.container {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: row; /* Arrange items in a row */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    gap: 20px; /* Space between items */
+/* Add scaling effect on hover over the logo */
+.logo:hover {
+    transform: scale(1.1); /* Scale the logo up on hover */
 }
 
-/* Styling for the login container */
-.login-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    padding: 20px; /* Padding around the content */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* Shadow for a lifted effect */
-    text-align: center; /* Center text */
-    width: 400px; /* Fixed width */
+/* Remove bullet points from social media list */
+.social-list {
+    list-style: none;
+    padding: 0;
 }
 
-/* Note about password styling */
-.password-note {
-    margin: 0 0 20px; /* Margin at the bottom */
-    font-size: 1.2em; /* Larger font size */
-    font-family: 'Helvetica', sans-serif; /* Use Helvetica font */
-    font-weight: bold; /* Bold text */
+/* Add spacing between each social media link */
+.social-list li {
+    margin: 15px 0;
 }
 
-/* Paragraphs inside the login container */
-.login-container p {
-    margin: 0 0 20px; /* Margin at the bottom */
-    font-size: 1em; /* Standard font size */
-    color: #ddd; /* Light grey text color */
+/* General styling for social media links */
+.social {
+    text-decoration: none; /* Remove underline */
+    font-size: 24px; /* Font size for text */
+    color: #fff; /* Text color */
+    padding: 15px 0; /* Padding inside the link */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically center text and icon */
+    justify-content: center; /* Horizontally center */
+    transition: all 0.3s ease; /* Smooth hover transition */
+    width: 250px; /* Fixed width for all links on desktop */
+    height: 60px; /* Fixed height for uniform size */
+    background-color: transparent; /* No background by default */
 }
 
-/* Styling for input fields inside the login container */
-.login-container input {
-    width: calc(100% - 20px); /* Full width minus padding */
-    padding: 10px; /* Padding inside the input field */
-    margin: 10px 0; /* Margin above and below */
-    border: none; /* Remove default border */
-    border-bottom: 2px solid #fff; /* Add a bottom border */
-    background-color: transparent; /* Transparent background */
-    color: #fff; /* White text color */
-    font-size: 1em; /* Standard font size */
-    letter-spacing: 1px; /* Slightly spaced letters */
-    transition: filter 0.3s ease-in-out; /* Smooth transition for filter changes */
+/* Styling for the icons inside the links */
+.social i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 32px; /* Icon size */
 }
 
-/* Focus effect for input fields */
-.login-container input:focus {
-    filter: blur(2px); /* Apply a blur effect when focused */
+/* Hover effects: change background and color on hover */
+.social:hover {
+    color: #000; /* Text color changes to black */
+    background-color: #fff; /* Background changes to white */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border-radius: 5px; /* Rounded corners on hover */
 }
 
-/* No filter effect when input is not focused */
-.login-container input:not(:focus) {
-    filter: none; /* Remove blur effect when not focused */
+/* Specific hover colors for each social media platform */
+.linkedin:hover {
+    background-color: #0077b5; /* LinkedIn blue */
+    color: #fff; /* White text on hover */
 }
 
-/* Styling for the submit button inside the login container */
-.login-container input[type="submit"] {
-    background-color: transparent; /* Transparent background */
-    color: #fff; /* White text color */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: color 0.3s ease-in-out, border 0.3s ease-in-out; /* Smooth transition for color and border changes */
-    border: 2px solid #fff; /* White border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 15px; /* Padding inside the button */
+.youtube:hover {
+    background-color: #ff0000; /* YouTube red */
+    color: #fff; /* White text on hover */
 }
 
-/* Hover effect for the submit button */
-.login-container input[type="submit"]:hover {
-    color: #000; /* Black text color on hover */
-    border: 2px solid #000; /* Black border on hover */
+.instagram:hover {
+    background-color: #e1306c; /* Instagram pink */
+    color: #fff; /* White text on hover */
 }
 
-/* Styling for error messages */
-.error-message {
-    color: #f00; /* Red text color for errors */
-    margin-top: 10px; /* Margin above the message */
-    font-size: 0.9em; /* Slightly smaller font size */
+.twitter:hover {
+    background-color: #1da1f2; /* Twitter blue */
+    color: #fff; /* White text on hover */
 }
 
-/* Styling for the join whitelist button */
-#joinWhitelistBtn {
-    background-color: transparent; /* Transparent background */
-    color: #fff; /* White text color */
-    border: 2px solid #fff; /* White border */
-    cursor: pointer; /* Pointer cursor on hover */
-    padding: 10px 20px; /* Padding inside the button */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1em; /* Standard font size */
-    transition: color 0.3s ease-in-out, border 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for color, border, and transform changes */
+.spotify:hover {
+    background-color: #1db954; /* Spotify green */
+    color: #fff; /* White text on hover */
 }
 
-/* Hover effect for the join whitelist button */
-#joinWhitelistBtn:hover {
-    color: #000; /* Black text color on hover */
-    border: 2px solid #000; /* Black border on hover */
+.pinterest:hover {
+    background-color: #e60023; /* Pinterest red */
+    color: #fff; /* White text on hover */
 }
 
-/* Animation for the active state of the join whitelist button */
-#joinWhitelistBtn.active {
-    animation: buttonExpand 0.3s ease-in-out; /* Apply the buttonExpand animation */
-}
-
-/* Keyframes for the button expand animation */
-@keyframes buttonExpand {
-    0% { transform: scale(1); } /* Initial scale */
-    100% { transform: scale(1.1); } /* Scaled up effect */
-}
-
-/* Styling for the whitelist form */
-.whitelist-form {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in a column */
-    max-height: 0; /* Start with zero height */
-    opacity: 0; /* Start with zero opacity */
-    overflow: hidden; /* Hide overflow content */
-    margin: 0; /* Remove default margin */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    padding: 20px; /* Padding around the content */
-    border-radius: 10px; /* Rounded corners */
-    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transition for height and opacity changes */
-    width: 400px; /* Fixed width */
-}
-
-/* Show state of the whitelist form */
-.whitelist-form.show {
-    max-height: 500px; /* Expand to 500px height */
-    opacity: 1; /* Fully opaque */
-}
-
-/* Heading inside the whitelist form */
-.whitelist-form h2 {
-    margin-bottom: 20px; /* Margin below the heading */
-    font-size: 1.5em; /* Larger font size */
-}
-
-/* Form fields inside the whitelist form */
-.whitelist-form .form-fields {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in a column */
-    gap: 10px; /* Space between items */
-}
-
-/* Styling for input fields inside the whitelist form */
-.whitelist-form .form-fields input {
-    flex: 1; /* Allow input fields to grow */
-    margin: 5px 0; /* Margin above and below */
-    padding: 10px; /* Padding inside the input field */
-    border: none; /* Remove default border */
-    border-bottom: 2px solid #fff; /* White bottom border */
-    background-color: transparent; /* Transparent background */
-    color: #fff; /* White text color */
-    font-size: 1em; /* Standard font size */
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Shadow effect for input fields */
-}
-
-/* Focus effect for input fields */
-.whitelist-form .form-fields input:focus {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* Enhanced shadow effect when focused */
-}
-
-/* Styling for submit button inside the whitelist form */
-.whitelist-form input[type="submit"] {
-    background-color: transparent; /* Transparent background */
-    color: #fff; /* White text color */
-    border: 2px solid #fff; /* White border */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: color 0.3s ease-in-out, border 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for color, border, and background-color changes */
-    padding: 15px; /* Padding inside the button */
-    font-size: 1em; /* Standard font size */
-    width: 100%; /* Full width */
-}
-
-/* Hover effect for the submit button */
-.whitelist-form input[type="submit"]:hover {
-    color: #000; /* Black text color on hover */
-    border: 2px solid #000; /* Black border on hover */
-    background-color: #fff; /* White background on hover */
-}
-
-/* Styling for privacy note */
-.privacy-note {
-    font-size: 0.8em; /* Smaller font size */
-    color: #aaa; /* Light grey text color */
-    margin-top: 10px; /* Margin above the note */
-}
-
-/* Responsive styles for screens smaller than 600px */
-@media (max-width: 600px) {
-    .container {
-        flex-direction: column; /* Stack items in a column for smaller screens */
+/* Media queries for responsive design */
+/* For medium-sized screens like tablets */
+@media (max-width: 768px) {
+    /* Reduce the width of the social media links */
+    .social {
+        width: 200px; /* Narrower width for tablets */
+        font-size: 20px; /* Smaller font size */
     }
 
-    .login-container {
-        padding: 15px; /* Reduce padding */
-        width: 90%; /* Adjust width to 90% of the container */
-        max-width: none; /* Remove maximum width constraint */
+    /* Decrease icon size for tablets */
+    .social i {
+        font-size: 28px;
     }
 
-    .login-container p {
-        font-size: 1em; /* Standard font size */
-    }
-
-    .login-container input, .login-container input[type="submit"] {
-        font-size: 0.9em; /* Slightly smaller font size */
-        padding: 8px; /* Reduce padding */
-    }
-
-    .whitelist-form {
-        flex-direction: column; /* Stack form fields in a column for smaller screens */
-    }
-
-    .whitelist-form .form-fields input {
-        width: 100%; /* Full width of container */
-    }
-
-    .whitelist-form h2 {
-        font-size: 1.2em; /* Smaller font size for heading */
-    }
-
-    .whitelist-form input, .whitelist-form input[type="submit"] {
-        font-size: 0.9em; /* Slightly smaller font size */
-        padding: 8px; /* Reduce padding */
-    }
-
+    /* Reduce the logo size for better proportion */
     .logo {
-        width: 100px; /* Reduce logo width */
+        width: 120px;
     }
 }
 
-/* Responsive styles for screens smaller than 400px */
-@media (max-width: 400px) {
-    .login-container p {
-        font-size: 0.8em; /* Smaller font size for very small screens */
+/* For smaller screens like smartphones */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Reduce padding for very small screens */
+    }
+
+    /* Make the social links take up the full width of the screen */
+    .social {
+        width: 100%; /* Full width */
+        font-size: 18px; /* Smaller font size */
+    }
+
+    /* Reduce icon size further for small screens */
+    .social i {
+        font-size: 24px;
+    }
+
+    /* Further reduce logo size for small screens */
+    .logo {
+        width: 100px;
     }
 }
