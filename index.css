@@ -25,7 +25,7 @@ body {
 
 /* Styling for the logo */
 .logo {
-    width: 250px; /* Increased width for the logo */
+    width: 150px; /* Default size for the logo */
     margin-bottom: 30px; /* Space below the logo */
     transition: transform 0.3s ease; /* Smooth transition for scaling effect */
 }
@@ -67,6 +67,13 @@ body {
     font-size: 32px; /* Icon size */
 }
 
+/* Styling for the custom Threads icon */
+.icon {
+    width: 55px; /* Custom icon width */
+    height: 55px; /* Custom icon height */
+    margin-right: 10px; /* Space between icon and text */
+}
+
 /* Hover effects: change background and color on hover */
 .social:hover {
     color: #000; /* Text color changes to black */
@@ -76,11 +83,6 @@ body {
 }
 
 /* Specific hover colors for each social media platform */
-.linkedin:hover {
-    background-color: #0077b5; /* LinkedIn blue */
-    color: #fff; /* White text on hover */
-}
-
 .youtube:hover {
     background-color: #ff0000; /* YouTube red */
     color: #fff; /* White text on hover */
@@ -112,6 +114,12 @@ body {
     color: #fff; /* White text on hover */
 }
 
+/* Threads hover effect */
+.threads:hover {
+    background-color: #000; /* Threads black */
+    color: #fff; /* White text on hover */
+}
+
 /* Media queries for responsive design */
 /* For medium-sized screens like tablets */
 @media (max-width: 768px) {
@@ -122,8 +130,10 @@ body {
     }
 
     /* Decrease icon size for tablets */
-    .social i {
+    .social i, .icon {
         font-size: 28px;
+        width: 28px;
+        height: 28px;
     }
 
     /* Reduce the logo size for better proportion */
@@ -145,8 +155,10 @@ body {
     }
 
     /* Reduce icon size further for small screens */
-    .social i {
+    .social i, .icon {
         font-size: 24px;
+        width: 24px;
+        height: 24px;
     }
 
     /* Further reduce logo size for small screens */
