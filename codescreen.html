@@ -38,6 +38,20 @@
         .background-video.vertical {
             display: none;
         }
+        
+        /* Style for the confirmation message */
+        .confirmation-message {
+            position: absolute; /* Position the message absolutely */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for exact centering */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: #fff; /* White text color */
+            padding: 20px; /* Padding around the message */
+            border-radius: 10px; /* Rounded corners */
+            display: none; /* Initially hidden */
+            z-index: 1; /* Ensure it's above other elements */
+        }
     </style>
 </head>
 <body>
@@ -104,6 +118,11 @@
                     By joining, you agree to our <a href="privacypolicy.html">Privacy Policy</a>.
                 </div>
             </form>
+        </div>
+        
+        <!-- Confirmation message element -->
+        <div id="confirmation" class="confirmation-message">
+            Thank you for joining the waitlist! You will be notified shortly.
         </div>
     </div>
 
@@ -179,8 +198,15 @@
             
             // Logic for form submission can be added here (e.g., validation, sending data to server)
 
-            // Reload the page after submission
-            window.location.reload();
+            // Show confirmation message
+            const confirmationMessage = document.getElementById('confirmation');
+            confirmationMessage.style.display = 'block'; // Display confirmation message
+
+            // Hide the confirmation message after 3 seconds
+            setTimeout(() => {
+                confirmationMessage.style.display = 'none'; // Hide message after timeout
+                window.location.reload(); // Reload the page after hiding
+            }, 3000);
         });
     </script>
 </body>
