@@ -40,7 +40,7 @@ body {
     max-width: 100%; /* Ensure the logo does not exceed the container width */
 }
 
-/* Container for login and whitelist form */
+/* Container for login and waitlist form */
 .container {
     display: flex; /* Use flexbox for layout */
     flex-direction: row; /* Arrange items in a row */
@@ -122,8 +122,8 @@ body {
     font-size: 0.9em; /* Slightly smaller font size */
 }
 
-/* Styling for the join whitelist button */
-#joinWhitelistBtn {
+/* Styling for the join waitlist button */
+#joinwaitlistBtn {
     background-color: transparent; /* Transparent background */
     color: #fff; /* White text color */
     border: 2px solid #fff; /* White border */
@@ -134,14 +134,14 @@ body {
     transition: color 0.3s ease-in-out, border 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for color, border, and transform changes */
 }
 
-/* Hover effect for the join whitelist button */
-#joinWhitelistBtn:hover {
+/* Hover effect for the join waitlist button */
+#joinwaitlistBtn:hover {
     color: #000; /* Black text color on hover */
     border: 2px solid #000; /* Black border on hover */
 }
 
-/* Animation for the active state of the join whitelist button */
-#joinWhitelistBtn.active {
+/* Animation for the active state of the join waitlist button */
+#joinwaitlistBtn.active {
     animation: buttonExpand 0.3s ease-in-out; /* Apply the buttonExpand animation */
 }
 
@@ -151,8 +151,8 @@ body {
     100% { transform: scale(1.1); } /* Scaled up effect */
 }
 
-/* Styling for the whitelist form */
-.whitelist-form {
+/* Styling for the waitlist form */
+.waitlist-form {
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items in a column */
     max-height: 0; /* Start with zero height */
@@ -166,27 +166,27 @@ body {
     width: 400px; /* Fixed width */
 }
 
-/* Show state of the whitelist form */
-.whitelist-form.show {
+/* Show state of the waitlist form */
+.waitlist-form.show {
     max-height: 500px; /* Expand to 500px height */
     opacity: 1; /* Fully opaque */
 }
 
-/* Heading inside the whitelist form */
-.whitelist-form h2 {
+/* Heading inside the waitlist form */
+.waitlist-form h2 {
     margin-bottom: 20px; /* Margin below the heading */
     font-size: 1.5em; /* Larger font size */
 }
 
-/* Form fields inside the whitelist form */
-.whitelist-form .form-fields {
+/* Form fields inside the waitlist form */
+.waitlist-form .form-fields {
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items in a column */
     gap: 10px; /* Space between items */
 }
 
-/* Styling for input fields inside the whitelist form */
-.whitelist-form .form-fields input {
+/* Styling for input fields inside the waitlist form */
+.waitlist-form .form-fields input {
     flex: 1; /* Allow input fields to grow */
     margin: 5px 0; /* Margin above and below */
     padding: 10px; /* Padding inside the input field */
@@ -199,12 +199,12 @@ body {
 }
 
 /* Focus effect for input fields */
-.whitelist-form .form-fields input:focus {
+.waitlist-form .form-fields input:focus {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* Enhanced shadow effect when focused */
 }
 
-/* Styling for submit button inside the whitelist form */
-.whitelist-form input[type="submit"] {
+/* Styling for submit button inside the waitlist form */
+.waitlist-form input[type="submit"] {
     background-color: transparent; /* Transparent background */
     color: #fff; /* White text color */
     border: 2px solid #fff; /* White border */
@@ -216,7 +216,7 @@ body {
 }
 
 /* Hover effect for the submit button */
-.whitelist-form input[type="submit"]:hover {
+.waitlist-form input[type="submit"]:hover {
     color: #000; /* Black text color on hover */
     border: 2px solid #000; /* Black border on hover */
     background-color: #fff; /* White background on hover */
@@ -250,19 +250,19 @@ body {
         padding: 8px; /* Reduce padding */
     }
 
-    .whitelist-form {
+    .waitlist-form {
         flex-direction: column; /* Stack form fields in a column for smaller screens */
     }
 
-    .whitelist-form .form-fields input {
+    .waitlist-form .form-fields input {
         width: 100%; /* Full width of container */
     }
 
-    .whitelist-form h2 {
+    .waitlist-form h2 {
         font-size: 1.2em; /* Smaller font size for heading */
     }
 
-    .whitelist-form input, .whitelist-form input[type="submit"] {
+    .waitlist-form input, .waitlist-form input[type="submit"] {
         font-size: 0.9em; /* Slightly smaller font size */
         padding: 8px; /* Reduce padding */
     }
