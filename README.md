@@ -4,6 +4,8 @@ YWF Website https://ywf.pt/
 
 https://my.dominios.pt/
 
+https://dashboard.emailjs.com/admin (lourencoprudencio@icloud.com)
+
 Tamanho recomendado para as fotos dos produtos 640x640, em PNG sem fundo
 
 Passwords encriptadas em hashs de 256-bits
