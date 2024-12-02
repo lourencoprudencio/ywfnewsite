@@ -1,219 +1,281 @@
-/* Styling for the body element */
+/* Reset básico */
 body {
-    margin: 0; /* Remove default margin */
-    font-family: 'Arial', sans-serif; /* Apply Arial font */
-    background: url('YWFONTOUR.jpg') no-repeat center center/cover; /*Verificar com o CHICO qual imagem usar ou LIVEYOURS.PNG*/ /* Set background image to cover the entire page */
-    color: #fff; /* Set text color to white */
-    overflow-x: hidden; /* Hide horizontal overflow */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center items horizontally */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
 }
 
-/* Styling for the header element */
 header {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center items horizontally */
-    padding: 20px; /* Padding inside the header */
-    background-color: #000; /* Black background color */
-    position: fixed; /* Fix the header at the top */
-    width: 100%; /* Full width */
-    top: 0; /* Align at the top of the page */
-    z-index: 1000; /* Ensure it stays above other content */
-    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for padding and background color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  margin-bottom: 20px;
 }
 
-/* Minimized state of the header */
-header.minimized {
-    padding: 10px; /* Reduce padding */
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
-}
-
-/* Styling for the logo */
 .logo {
-    width: 100px; /* Set width */
-    height: 100px; /* Set height */
-    background-image: url('YWF.png'); /* Set logo image */
-    background-size: contain; /* Scale the image to fit container */
-    background-repeat: no-repeat; /* Prevent image repeat */
-    background-position: center; /* Center the image */
-    margin-bottom: 20px; /* Margin below the logo */
-    transition: width 0.3s ease-in-out; /* Smooth transition for width */
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50px;
 }
 
-/* Adjust logo size when header is minimized */
-header.minimized .logo {
-    width: 80px; /* Reduce logo size */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s;
 }
 
-/* Styling for navigation menu */
-nav ul {
-    list-style: none; /* Remove default list styling */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: row; /* Arrange items in a row */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    gap: 20px; /* Space between items */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+.menu-toggle:hover {
+  transform: scale(1.1);
 }
 
-/* Styling for list items in the navigation menu */
-nav ul li {
-    position: relative; /* Position relative for child elements */
+.header-icons {
+  display: flex;
+  gap: 15px;
 }
 
-/* Styling for links in the navigation menu */
-nav ul li a {
-    text-decoration: none; /* Remove underline */
-    color: #bbb; /* Light gray text color */
-    font-size: 1.2em; /* Font size */
-    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out; /* Smooth transition for color and font-size */
+/* Animações nos ícones de procurar e carrinho */
+.search-icon img, 
+.cart-icon img {
+  width: 100px;
+  height: 100px;
+  filter: invert(100%);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Adjust font size of links when header is minimized */
-header.minimized nav ul li a {
-    font-size: 1em; /* Reduce font size */
+.search-icon img:hover, 
+.cart-icon img:hover {
+  transform: scale(1.1);
 }
 
-/* Underline effect for links */
-nav ul li a::after {
-    content: ''; /* Empty content for pseudo-element */
-    display: block; /* Display as block */
-    width: 0; /* Start with 0 width */
-    height: 2px; /* Set height */
-    background: #fff; /* White background */
-    transition: width 0.3s ease-in-out; /* Smooth transition for width */
-    margin-top: 5px; /* Margin on top */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Expand underline effect on hover */
-nav ul li a:hover::after {
-    width: 100%; /* Full width on hover */
+.menu-logo {
+  text-align: center; /* Centraliza o logotipo no topo */
+  margin-bottom: 20px; /* Espaçamento abaixo do logotipo */
 }
 
-/* Change text color on hover */
-nav ul li a:hover {
-    color: #fff; /* White text color on hover */
+.menu-logo img {
+  width: 100px; /* Tamanho do logotipo */
+  height: auto;
 }
 
-/* Styling for the hero section */
-.hero-section {
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    background: transparent; /* No background for hero section */
-    text-align: center; /* Center text */
-    position: relative; /* Position relative for overlay */
-    margin-top: 120px; /* Margin to account for fixed header */
+.menu.active {
+  transform: translateX(0);
 }
 
-/* Overlay effect for hero section */
-.hero-section::before {
-    content: ''; /* Empty content for pseudo-element */
-    position: absolute; /* Absolute positioning */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    z-index: 1; /* Ensure overlay is above background */
+.menu-close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #fff;
+  align-self: flex-end;
+  margin: 20px;
+  cursor: pointer;
 }
 
-/* Styling for hero content */
-.hero-content {
-    position: relative; /* Position relative for z-index */
-    z-index: 2; /* Ensure content is above overlay */
-    max-width: 800px; /* Maximum width */
-    padding: 20px; /* Padding inside */
+/* Lista do menu com animação de sublinhar */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Styling for hero section heading */
-.hero-content h1 {
-    font-size: 3em; /* Font size */
-    margin: 0; /* Remove margin */
-    letter-spacing: 5px; /* Space between letters */
+.menu ul li {
+  margin: 20px 0;
+  font-size: 18px;
+  padding: 10px 20px;
+  position: relative;
 }
 
-/* Styling for hero section paragraph */
-.hero-content p {
-    font-size: 1.2em; /* Font size */
-    margin-top: 20px; /* Margin on top */
-    line-height: 1.5; /* Line height */
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
 }
 
-/* Styling for call-to-action button */
-.cta-button {
-    margin-top: 30px; /* Margin on top */
-    padding: 15px 30px; /* Padding inside button */
-    background-color: #fff; /* White background */
-    color: #000; /* Black text color */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 1em; /* Font size */
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for background and color */
+.menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff4081; /* Cor do sublinhado */
+  transition: width 0.3s ease;
 }
 
-/* Hover effect for call-to-action button */
-.cta-button:hover {
-    background-color: #000; /* Black background on hover */
-    color: #fff; /* White text color on hover */
-    border: 2px solid #fff; /* White border on hover */
+.menu ul li a:hover {
+  color: #ff4081; /* Muda a cor do texto */
 }
 
-/* Styling for footer */
+.menu ul li a:hover::after {
+  width: 100%; /* Anima o sublinhado */
+}
+
+.search-bar {
+  display: flex;
+  padding: 5px 15px; /* Reduzido o padding vertical e horizontal */
+  margin-top: -50px; /* Movendo a barra mais para cima */
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  flex-grow: 1;
+  margin-right: 10px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #ff4081;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 10px;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduzi o gap entre os ícones */
+  margin-top: 40px; /* Movendo os ícones mais para cima */
+  margin-bottom: 0; /* Reduzindo o espaço inferior */
+}
+
+.social-icon {
+  width: 20px; /* Reduzido o tamanho para harmonizar */
+  height: 20px;
+  filter: invert(100%);
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+main h1 {
+  margin-top: 150px; /* Espaçamento maior entre logotipo e título */
+  font-size: 36px;
+  position: relative;
+}
+
+main h1::after {
+  content: "";
+  position: absolute;
+  bottom: -15px; /* Linha logo abaixo do texto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px; /* Largura inicial da linha */
+  height: 3px; /* Altura da linha */
+  background-color: #fff; /* Cor da linha */
+  font-weight: bold;
+  transition: width 0.3s ease; /* Animação suave para redimensionamento */
+}
+
+main h1.scrolled::after {
+  width: 200px; /* Largura maior da linha ao fazer scroll */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 imagens por linha */
+  gap: 20px; /* Espaçamento entre as imagens */
+  margin-top: 30px; /* Espaçamento entre a primeira linha e o conteúdo acima */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px; /* Opcional: bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Opcional: sombra nas imagens */
+}
+/* Footer styling */
 footer {
-    padding: 20px; /* Padding inside */
-    background-color: transparent; /* Removed background color */
-    text-align: center; /* Center text */
+  background-color: #000; /* Fundo preto, consistente com a página */
+  color: #fff; /* Texto branco */
+  padding: 40px 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o conteúdo */
+  margin-top: 30px; /* Espaço acima do footer */
 }
 
-/* Responsive design for mobile devices */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2em; /* Smaller font size for mobile */
-    }
-
-    .hero-content p {
-        font-size: 1em; /* Smaller font size for mobile */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack menu items vertically */
-        gap: 10px; /* Reduce space between items */
-    }
-
-    nav ul li a {
-        font-size: 1em; /* Smaller font size for mobile */
-    }
-
-    .logo {
-        width: 80px; /* Smaller logo for mobile */
-    }
+.footer-container {
+  max-width: 1200px; /* Limita a largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
 }
 
-/* Additional responsive design for very small devices */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.5em; /* Further reduce font size */
-    }
+.footer-logo {
+  margin-bottom: 20px; /* Espaço abaixo do logotipo */
+}
 
-    .hero-content p {
-        font-size: 0.9em; /* Further reduce font size */
-    }
+.footer-logo-img {
+  width: 100px; /* Ajuste do tamanho do logotipo */
+  height: auto; /* Mantém proporção */
+  filter: invert(100%); /* Preto e branco para combinar com o estilo */
+}
 
-    nav ul {
-        gap: 5px; /* Further reduce space between items */
-    }
+.footer-social-icons {
+  margin-bottom: 20px; /* Espaço entre os ícones e o texto */
+}
 
-    nav ul li a {
-        font-size: 0.9em; /* Further reduce font size */
-    }
+.footer-social-icons a {
+  margin: 0 10px; /* Espaçamento entre os ícones */
+}
 
-    .logo {
-        width: 60px; /* Further reduce logo size */
-    }
+.footer-social-icons .social-icon {
+  width: 24px; /* Tamanho dos ícones sociais */
+  height: 24px;
+  transition: transform 0.3s ease; /* Animação de hover */
+}
+
+.footer-social-icons .social-icon:hover {
+  transform: scale(1.2); /* Aumenta os ícones no hover */
+}
+
+footer p {
+  font-size: 14px; /* Tamanho do texto do copyright */
+  color: #fff; /* Texto branco */
+  opacity: 0.7; /* Texto levemente apagado */
 }
