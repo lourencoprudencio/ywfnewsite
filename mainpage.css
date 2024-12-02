@@ -145,7 +145,7 @@ header {
 .search-bar {
   display: flex;
   padding: 5px 15px; /* Reduzido o padding vertical e horizontal */
-  margin-top: -50px; /* Movendo a barra mais para cima */
+  margin-top: -30px; /* Movendo a barra mais para cima */
 }
 
 .search-bar input {
@@ -176,8 +176,8 @@ header {
   display: flex;
   justify-content: center;
   gap: 10px; /* Reduzi o gap entre os ícones */
-  margin-top: 40px; /* Movendo os ícones mais para cima */
-  margin-bottom: 0; /* Reduzindo o espaço inferior */
+  margin-top: 20px; /* Espaço acima dos ícones */
+  margin-bottom: 50px; /* Aumentado para criar mais espaço no final */
 }
 
 .social-icon {
