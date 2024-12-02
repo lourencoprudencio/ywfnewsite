@@ -279,3 +279,21 @@ footer p {
   color: #fff; /* Texto branco */
   opacity: 0.7; /* Texto levemente apagado */
 }
+.privacy-button {
+  display: inline-block;
+  margin-top: 15px; /* Espaçamento acima do botão */
+  padding: 10px 20px; /* Tamanho do botão */
+  color: #fff; /* Cor do texto */
+  background-color: #000; /* Cor de fundo */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 14px; /* Tamanho do texto */
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.privacy-button:hover {
+  background-color: #000; /* Cor de fundo ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento no hover */
+}
