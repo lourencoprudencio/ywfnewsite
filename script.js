@@ -3,6 +3,7 @@ const menu = document.querySelector('.menu');
 const menuClose = document.querySelector('.menu-close');
 const searchIcon = document.getElementById('open-search-menu');
 const searchInput = document.getElementById('search-input');
+const sizeButtons = document.querySelectorAll('.size-button');
 
 // Abre o menu ao clicar no botão
 menuToggle.addEventListener('click', () => {
@@ -29,4 +30,16 @@ document.addEventListener("scroll", () => {
       title.classList.remove("scrolled");
     }
   });
-  
+  function changeImage(image) {
+    document.getElementById('main-product-image').src = image;
+  }
+  // Adiciona um evento de clique para cada botão de tamanho
+sizeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove a classe 'selected' de todos os botões
+    sizeButtons.forEach(btn => btn.classList.remove('selected'));
+    
+    // Adiciona a classe 'selected' no botão clicado
+    button.classList.add('selected');
+  });
+});

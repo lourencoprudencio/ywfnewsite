@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YWF♻️ - Product Purchase</title>
+  <link rel="stylesheet" href="product.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+    <div class="logo">
+      <img src="ywf.png" alt="YWF Logo" style="height: 150px;">
+    </div>
+    <div class="header-icons">
+      <span class="icon">
+        <img src="searchicon.png" alt="Search Icon" class="search-icon" id="open-search-menu">
+      </span>
+      <span class="icon">
+        <img src="shopcarticon.png" alt="Cart Icon" class="cart-icon">
+      </span>
+    </div>
+  </header>
+
+  <nav class="menu">
+    <div class="menu-logo">
+      <img src="ywf.png" alt="YWF Logo" style="width: 100px;">
+    </div>
+    <button class="menu-close" aria-label="Close menu">&times;</button>
+    <ul>
+      <li><a href="#">Shop</a><span class="expand-icon">+</span></li>
+      <li><a href="#">Campaigns</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="mainpage.html">Urban Threads</a></li>
+      <li><a href="#">Log In</a></li>
+    </ul>
+    <div class="search-bar">
+      <input type="text" placeholder="Search our store..." id="search-input">
+      <button>
+        <img src="searchicon.png" alt="Search Icon" class="button-search-icon">
+      </button>
+    </div>
+    <div class="social-icons">
+      <a href="https://open.spotify.com/user/31go5j4quq7wr6quqaojhi4c6fc4?si=1b31331f896f4fbc"><img src="spotify.png" alt="Spotify" class="social-icon"></a>
+      <a href="https://www.instagram.com/ywf.eu"><img src="instagram.png" alt="Instagram Icon" class="social-icon"></a>
+      <a href="https://www.tiktok.com/@ywf.eu?_t=8qExVkPPiKo&_r=1"><img src="tiktok.png" alt="TikTok Icon" class="social-icon"></a>
+      <a href="https://www.youtube.com/@ywf_eu"><img src="youtube.png" alt="YouTube Icon" class="social-icon"></a>
+      <a href="https://pt.pinterest.com/ywfeu/"><img src="pinterest.png" alt="Pinterest Icon" class="social-icon"></a>
+      <a href="https://x.com/ywf_eu"><img src="twitter.png" alt="twitter Icon" class="social-icon"></a>
+      <a href="https://www.threads.net/@ywf.eu"><img src="threads.png" alt="threads Icon" class="social-icon"></a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Purchase Your Urban Thread</h1>
+    <div class="product-info">
+      <div class="product-image-container">
+        <img src="sweatshirt-removebg-preview.png" alt="Urban Thread Product" class="product-image" id="main-product-image">
+      </div>
+      <div class="product-details">
+        <h2>Hoodie YWF Logo</h2>
+        <p>High-quality urban-style hoodie designed for comfort and style.</p>
+        <p class="price">€49.99</p>
+        <form action="/checkout" method="POST">
+          <label for="size">Select Size:</label>
+          <div class="size-options">
+            <button type="button" class="size-button">Small</button>
+            <button type="button" class="size-button">Medium</button>
+            <button type="button" class="size-button">Large</button>
+            <button type="button" class="size-button">X Large</button>
+            <button type="button" class="size-button">XX Large</button>
+          </div>
+          <button type="submit" class="purchase-btn">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="product-thumbnails">
+      <img src="sweatshirt.jpg" alt="Product Angle 1" class="thumbnail" onclick="changeImage('sweatshirt.jpg')">
+      <img src="product-angle2.jpg" alt="Product Angle 2" class="thumbnail" onclick="changeImage('product-angle2.jpg')">
+      <img src="product-angle3.jpg" alt="Product Angle 3" class="thumbnail" onclick="changeImage('product-angle3.jpg')">
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="ywf.png" alt="YWF Logo" class="footer-logo-img">
+      </div>
+      <div class="footer-social-icons">
+        <a href="https://open.spotify.com/user/31go5j4quq7wr6quqaojhi4c6fc4?si=1b31331f896f4fbc"><img src="spotify.png" alt="Spotify" class="social-icon"></a>
+        <a href="https://www.instagram.com/ywf.eu"><img src="instagram.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://www.tiktok.com/@ywf.eu?_t=8qExVkPPiKo&_r=1"><img src="tiktok.png" alt="TikTok" class="social-icon"></a>
+        <a href="https://www.youtube.com/@ywf_eu"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
+        <a href="https://pt.pinterest.com/ywfeu/"><img src="pinterest.png" alt="Pinterest Icon" class="social-icon"></a>
+        <a href="https://x.com/ywf_eu"><img src="twitter.png" alt="twitter Icon" class="social-icon"></a>
+        <a href="https://www.threads.net/@ywf.eu"><img src="threads.png" alt="threads Icon" class="social-icon"></a>    
+      </div>
+      <p>&copy; 2024 YWF♻️ - Young Wild Free. All rights reserved.</p>
+      <a href="privacypolicy.html" class="privacy-button">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

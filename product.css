@@ -286,7 +286,7 @@ footer p {
   color: #fff; /* Cor do texto */
   background-color: #000; /* Cor de fundo */
   text-decoration: none; /* Remove o sublinhado */
-  border-radius: 5px; /* Bordas arredondadas */
+  border-radius: 0; /* Bordas arredondadas */
   font-size: 14px; /* Tamanho do texto */
   font-weight: bold;
   text-align: center;
@@ -296,4 +296,200 @@ footer p {
 .privacy-button:hover {
   background-color: #000; /* Cor de fundo ao passar o mouse */
   transform: scale(1.05); /* Leve aumento no hover */
+}
+
+
+/* Modificar a estrutura da seção do produto */
+.product-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 30px;
+}
+
+.product-image-container {
+  width: 20%;
+  border-radius: 0;
+  overflow: hidden;
+  border: 1px solid #333;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-details {
+  max-width: 500px;
+  background-color: transparent; /* Remover o fundo da caixa de informações */
+  padding: 20px;
+  border-radius: 0;
+  border: 2px solid white; /* Borda branca ao redor das informações */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.product-details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para a galeria de miniaturas */
+.product-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.product-details p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 22px;
+  color: #f39c12;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Opções de tamanho */
+.size-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.size-button {
+  padding: 10px 20px;
+  background-color: transparent; /* Fundo transparente */
+  color: white;
+  border: 2px solid #fff; /* Borda branca */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 0;
+}
+
+.size-button:hover {
+  background-color: #f39c12; /* Muda a cor de fundo ao passar o mouse */
+  transform: scale(1.1); /* Aumenta o botão */
+}
+
+/* Estilo para o botão de tamanho selecionado */
+.size-button.selected {
+  background-color: #f39c12;  /* Cor laranja quando selecionado */
+  color: white;  /* Cor do texto */
+  transform: scale(1.1);  /* Aumenta o tamanho do botão */
+}
+/* Botão de compra */
+.purchase-btn {
+  background-color: transparent; /* Remover o fundo */
+  color: #fff;  /* Cor do texto */
+  padding: 15px 30px;
+  font-size: 18px;
+  border: 2px solid #fff;  /* Borda laranja ao redor */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 0;
+}
+
+.purchase-btn:hover {
+  background-color: #f39c12;  /* Fica laranja quando passa o mouse */
+  color: white;  /* Cor do texto fica branca ao passar o mouse */
+  transform: scale(1.05); /* Animação de aumento */
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.privacy-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.privacy-button:hover {
+  background-color: #000;
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+/* Consultas de mídia para dispositivos móveis */
+@media (max-width: 768px) {
+  /* Ajuste no layout para telas pequenas */
+  .product-info {
+    flex-direction: column; /* Empilhar os itens (imagem e detalhes) */
+    gap: 20px;
+  }
+
+  .product-image-container {
+    width: 70%; /* Reduz a largura da imagem */
+  }
+
+  .product-details {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* Menu fixo para telas pequenas */
+  .menu {
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-logo img {
+    width: 80px;
+  }
+
+  .size-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .size-button, .purchase-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .footer-container {
+    padding: 20px;
+  }
+
+  .footer-logo-img {
+    width: 80px;
+  }
 }
