@@ -222,7 +222,7 @@ body {
 /* Estilos para a galeria de produtos */
 .products-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 30px;
     padding: 0 20px;
@@ -367,4 +367,24 @@ body {
   .privacy-button:hover {
     background-color: #000;
     transform: scale(1.05);
-  }  
+  }
+  /* Para telas maiores que 1024px, manter 4 colunas */
+@media (max-width: 1024px) {
+  .products-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas médias */
+  }
+}
+
+/* Para telas menores que 768px, manter 2 colunas */
+@media (max-width: 768px) {
+  .products-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+  }
+}
+
+/* Para telas ainda menores (mobile), 1 coluna */
+@media (max-width: 480px) {
+  .products-gallery {
+    grid-template-columns: 1fr; /* 1 coluna em dispositivos móveis */
+  }
+}  
