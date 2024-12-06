@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (isValid) {
             console.log('Login successful for:', username); // Log successful login
-            window.location.href = 'Urban Threads.html'; // Redirect on valid credentials
+            window.location.href = 'homepage.html'; // Redirect on valid credentials
         } else {
             console.error('Login failed for:', username); // Log failed login
             document.getElementById('error').textContent = 'Incorrect username or password. Please try again.';
