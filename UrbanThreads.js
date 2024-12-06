@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (currentPageData) {
     breadcrumbItems.push(`<span>${currentPageData.name}</span>`);
   } else {
-    breadcrumbItems.push(`<span>Página Atual</span>`);
+    breadcrumbItems.push(`<span>${currentPageData.name}</span>`);
   }
 
   breadcrumbContainer.innerHTML = breadcrumbItems.join(" / ");
